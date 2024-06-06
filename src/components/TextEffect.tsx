@@ -103,35 +103,35 @@ const TextEffect = () => {
 
         <div className="relative top-[20%] -z-10">
           <Image
-            src="/sample-1.webp"
+            src="/showcase-1.png"
             width={200}
             height={200}
             alt="sample"
             className="rounded-md opacity-0 sample-1 absolute top-0 left-0 -rotate-12"
           />
           <Image
-            src="/sample-1.webp"
+            src="/showcase-2.png"
             width={200}
             height={200}
             alt="sample"
             className="rounded-md opacity-0 sample-2 absolute top-10 left-[20%] rotate-12"
           />
           <Image
-            src="/sample-1.webp"
+            src="/showcase-3.png"
             width={200}
             height={200}
             alt="sample"
             className="rounded-md opacity-0 sample-3 absolute top-24 right-[25%] rotate-12"
           />
           <Image
-            src="/sample-1.webp"
+            src="/showcase-4.png"
             width={200}
             height={200}
             alt="sample"
             className="rounded-md opacity-0 sample-4 absolute top-10 right-[10%] -rotate-12"
           />
           <Image
-            src="/sample-1.webp"
+            src="/showcase-5.png"
             width={200}
             height={200}
             alt="sample"
