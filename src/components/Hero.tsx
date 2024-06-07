@@ -165,17 +165,29 @@ const Hero = () => {
           "
               ></div>
             </div>
+
+            <p className="text-2xl font-normal mb-5 text-white/90">
+              {" "}
+              Ready to craft innovative web experiences?
+            </p>
+
             <h1 className="home-text home-text1 relative dark:text-white/90 mb-4">
-              Build{" "}
+              Let's collaborate!
               <div className="highlight absolute top-0 left-[11.5rem] -z-10 bg-primary h-full w-0"></div>
               <span className="hero-text text-white p-3 rounded-md">
-                Amazing Projects
+                Hi, I'm Dev Sethi,
               </span>{" "}
-              with latest
             </h1>
             <h1 className="home-text home-text2 dark:text-white/90">
-              Technologies in Simple Way
+              A Next.js developer based in India
             </h1>
+            {/* <h1 className="home-text home-text1 text-xl font-semibold relative dark:text-white/90 mb-4">
+              Ready to craft innovative web experiences?
+            </h1>
+            <h1 className="home-text home-text2 dark:text-white/90">
+              Let's collaborate! Hi, I'm Dev Sethi, <br /> A Next.js developer based in
+              India
+            </h1> */}
             {/* <div>
               <div
                 className="bottom-0

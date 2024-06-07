@@ -89,15 +89,17 @@ const TextEffect = () => {
     );
   }, []);
 
+  // Elevate your online presence with cutting edge development. Hi, I'm Dev Sethi, a Next.js developer in India. Let's build something exceptional!
+
   return (
     <>
       <div className="h-screen text-effect-hero w-full container">
         <h2 className="text-7xl mt-[8rem] absolute opacity-20 overflow-hidden font-extrabold">
-          Lorem ipsum dolor sit, amet consectetur <br /> adipisicing elit.
+          Elevate your online presence with cutting <br /> adipisicing elit.
           Aperiam,
         </h2>
         <h2 className="text-7xl mt-[8rem] w-[0%] text-hover absolute overflow-hidden opacity-100 whitespace-nowrap font-extrabold">
-          Lorem ipsum dolor sit, amet consectetur <br /> adipisicing elit.
+          Elevate your online presence with cutting <br /> adipisicing elit.
           Aperiam,
         </h2>
 
