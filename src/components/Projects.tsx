@@ -291,14 +291,501 @@ const Projects = () => {
               </div>
             </div>
           </div>
-          <div className="scroll-section">
-            <h3>Section 2</h3>
+          <div className="scroll-section container gap-16 flex-col md:flex-row">
+            <div className="w-[50%]">
+              <div className="relative project-text">
+                <span>Tech Expertise</span>
+                <div className="absolute w-0 project-stroke h-[2px] bg-gradient-to-r from-fuchsia-500 to-cyan-500 transform -translate-x-1/2 -translate-y-1/2 top-[50%] left-[60%]"></div>
+              </div>
+              <div className="flex gap-10 flex-col mt-10">
+                <h3 className="text-[2.5rem] project-text leading-[2.25rem] font-extrabold">
+                  Proven Webflow Skills that come with extra peace of mind
+                </h3>
+                <p className="text-justify project-text">
+                  More than 5 years of professional experience with No-Code
+                  tools has equipped me with valuable skills. I'm honored to be
+                  recognized by the industry, including my clients and
+                  colleagues. <br /> When you work with me, you can be confident
+                  that your expectations will be met and that your project will
+                  adhere to the highest industry standards.
+                </p>
+                <div className="flex items-center gap-5 project-text">
+                  <Button variant="secondary">
+                    <Link href="/" className="flex items-center gap-5 text-lg">
+                      <FaGithub />
+                      Github
+                    </Link>
+                  </Button>
+                  <Button variant="secondary">
+                    <Link href="/" className="flex items-center gap-5 text-lg">
+                      <FaArrowUpRightFromSquare />
+                      Visit Site
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+            <div className="w-[40%] project-showcase min-h-[70%] rounded-lg border shadow-2xl shadow-indigo-600/50">
+              <div className="flex items-start relative p-5 gap-6 justify-center flex-col">
+                <div className="w-[100%] project-image h-[40vh] relative rounded-md">
+                  {/* <Link
+                    href={"/"}
+                    className="text-white flex flex-col items-center justify-center text-center gap-3 text-sm"
+                  >
+                    View
+                    <FaArrowUpRightFromSquare />
+                  </Link> */}
+                  <Image
+                    src="/project-1.webp"
+                    fill
+                    alt="project-1"
+                    className="rounded-lg"
+                  />
+                </div>
+                <div className="flex items-start flex-col gap-5">
+                  <h4 className="text-xl font-semibold underline">
+                    Tech Stack
+                  </h4>
+                  <div className="flex items-center gap-4 flex-wrap">
+                    <Image
+                      src="/nextjs.webp"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/supabase.webp"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/drizzle.svg"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/tailwind.svg"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/postgresql.svg"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/shadcn.webp"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/react.webp"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/typescript.svg"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/figma.svg"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/vercel.webp"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/html-5.webp"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/css-3.webp"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/github.svg"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="scroll-section">
-            <h3>Section 3</h3>
+          <div className="scroll-section container gap-16 flex-col md:flex-row">
+            <div className="w-[50%]">
+              <div className="relative project-text">
+                <span>Tech Expertise</span>
+                <div className="absolute w-0 project-stroke h-[2px] bg-gradient-to-r from-fuchsia-500 to-cyan-500 transform -translate-x-1/2 -translate-y-1/2 top-[50%] left-[60%]"></div>
+              </div>
+              <div className="flex gap-10 flex-col mt-10">
+                <h3 className="text-[2.5rem] project-text leading-[2.25rem] font-extrabold">
+                  Proven Webflow Skills that come with extra peace of mind
+                </h3>
+                <p className="text-justify project-text">
+                  More than 5 years of professional experience with No-Code
+                  tools has equipped me with valuable skills. I'm honored to be
+                  recognized by the industry, including my clients and
+                  colleagues. <br /> When you work with me, you can be confident
+                  that your expectations will be met and that your project will
+                  adhere to the highest industry standards.
+                </p>
+                <div className="flex items-center gap-5 project-text">
+                  <Button variant="secondary">
+                    <Link href="/" className="flex items-center gap-5 text-lg">
+                      <FaGithub />
+                      Github
+                    </Link>
+                  </Button>
+                  <Button variant="secondary">
+                    <Link href="/" className="flex items-center gap-5 text-lg">
+                      <FaArrowUpRightFromSquare />
+                      Visit Site
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+            <div className="w-[40%] project-showcase min-h-[70%] rounded-lg border shadow-2xl shadow-indigo-600/50">
+              <div className="flex items-start relative p-5 gap-6 justify-center flex-col">
+                <div className="w-[100%] project-image h-[40vh] relative rounded-md">
+                  {/* <Link
+                    href={"/"}
+                    className="text-white flex flex-col items-center justify-center text-center gap-3 text-sm"
+                  >
+                    View
+                    <FaArrowUpRightFromSquare />
+                  </Link> */}
+                  <Image
+                    src="/project-1.webp"
+                    fill
+                    alt="project-1"
+                    className="rounded-lg"
+                  />
+                </div>
+                <div className="flex items-start flex-col gap-5">
+                  <h4 className="text-xl font-semibold underline">
+                    Tech Stack
+                  </h4>
+                  <div className="flex items-center gap-4 flex-wrap">
+                    <Image
+                      src="/nextjs.webp"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/supabase.webp"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/drizzle.svg"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/tailwind.svg"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/postgresql.svg"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/shadcn.webp"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/react.webp"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/typescript.svg"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/figma.svg"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/vercel.webp"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/html-5.webp"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/css-3.webp"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/github.svg"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="scroll-section">
-            <h3>Section 4</h3>
+
+          <div className="scroll-section container gap-16 flex-col md:flex-row">
+            <div className="w-[50%]">
+              <div className="relative project-text">
+                <span>Tech Expertise</span>
+                <div className="absolute w-0 project-stroke h-[2px] bg-gradient-to-r from-fuchsia-500 to-cyan-500 transform -translate-x-1/2 -translate-y-1/2 top-[50%] left-[60%]"></div>
+              </div>
+              <div className="flex gap-10 flex-col mt-10">
+                <h3 className="text-[2.5rem] project-text leading-[2.25rem] font-extrabold">
+                  Proven Webflow Skills that come with extra peace of mind
+                </h3>
+                <p className="text-justify project-text">
+                  More than 5 years of professional experience with No-Code
+                  tools has equipped me with valuable skills. I'm honored to be
+                  recognized by the industry, including my clients and
+                  colleagues. <br /> When you work with me, you can be confident
+                  that your expectations will be met and that your project will
+                  adhere to the highest industry standards.
+                </p>
+                <div className="flex items-center gap-5 project-text">
+                  <Button variant="secondary">
+                    <Link href="/" className="flex items-center gap-5 text-lg">
+                      <FaGithub />
+                      Github
+                    </Link>
+                  </Button>
+                  <Button variant="secondary">
+                    <Link href="/" className="flex items-center gap-5 text-lg">
+                      <FaArrowUpRightFromSquare />
+                      Visit Site
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+            <div className="w-[40%] project-showcase min-h-[70%] rounded-lg border shadow-2xl shadow-indigo-600/50">
+              <div className="flex items-start relative p-5 gap-6 justify-center flex-col">
+                <div className="w-[100%] project-image h-[40vh] relative rounded-md">
+                  {/* <Link
+                    href={"/"}
+                    className="text-white flex flex-col items-center justify-center text-center gap-3 text-sm"
+                  >
+                    View
+                    <FaArrowUpRightFromSquare />
+                  </Link> */}
+                  <Image
+                    src="/project-1.webp"
+                    fill
+                    alt="project-1"
+                    className="rounded-lg"
+                  />
+                </div>
+                <div className="flex items-start flex-col gap-5">
+                  <h4 className="text-xl font-semibold underline">
+                    Tech Stack
+                  </h4>
+                  <div className="flex items-center gap-4 flex-wrap">
+                    <Image
+                      src="/nextjs.webp"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/supabase.webp"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/drizzle.svg"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/tailwind.svg"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/postgresql.svg"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/shadcn.webp"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/react.webp"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/typescript.svg"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/figma.svg"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/vercel.webp"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/html-5.webp"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/css-3.webp"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                    <Image
+                      src="/github.svg"
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt="nextjs"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
