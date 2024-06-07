@@ -76,7 +76,7 @@ const Projects = () => {
       scrollTrigger: {
         trigger: ".project-section",
         // markers: true,
-        start: "top 40%",
+        start: "top 70%",
         end: "top 0%",
       },
     });
@@ -90,10 +90,15 @@ const Projects = () => {
       },
       "a"
     );
-    tl2.to(".project-stroke", {
-      width: "80%",
-      ease: "power1.in",
-    });
+    tl2.to(
+      ".project-stroke",
+      {
+        width: "80%",
+        ease: "power1.in",
+        delay: 0.8,
+      },
+      "a"
+    );
     tl2.from(
       ".project-showcase",
       {
