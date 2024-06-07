@@ -171,7 +171,7 @@ const Projects = () => {
                     <FaArrowUpRightFromSquare />
                   </Link> */}
                   <Image
-                    src="/project-1.png"
+                    src="/project-1.webp"
                     fill
                     alt="project-1"
                     className="rounded-lg"
@@ -183,7 +183,7 @@ const Projects = () => {
                   </h4>
                   <div className="flex items-center gap-4 flex-wrap">
                     <Image
-                      src="/nextjs.png"
+                      src="/nextjs.webp"
                       width={50}
                       height={50}
                       objectFit="cover"
@@ -191,7 +191,7 @@ const Projects = () => {
                       alt="nextjs"
                     />
                     <Image
-                      src="/supabase.png"
+                      src="/supabase.webp"
                       width={50}
                       height={50}
                       objectFit="cover"
@@ -223,7 +223,7 @@ const Projects = () => {
                       alt="nextjs"
                     />
                     <Image
-                      src="/shadcn.png"
+                      src="/shadcn.webp"
                       width={50}
                       height={50}
                       objectFit="cover"
@@ -231,7 +231,7 @@ const Projects = () => {
                       alt="nextjs"
                     />
                     <Image
-                      src="/react.png"
+                      src="/react.webp"
                       width={50}
                       height={50}
                       objectFit="cover"
@@ -255,7 +255,7 @@ const Projects = () => {
                       alt="nextjs"
                     />
                     <Image
-                      src="/vercel.png"
+                      src="/vercel.webp"
                       width={50}
                       height={50}
                       objectFit="cover"
@@ -263,7 +263,7 @@ const Projects = () => {
                       alt="nextjs"
                     />
                     <Image
-                      src="/html-5.png"
+                      src="/html-5.webp"
                       width={50}
                       height={50}
                       objectFit="cover"
@@ -271,7 +271,7 @@ const Projects = () => {
                       alt="nextjs"
                     />
                     <Image
-                      src="/css-3.png"
+                      src="/css-3.webp"
                       width={50}
                       height={50}
                       objectFit="cover"

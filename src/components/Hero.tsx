@@ -176,7 +176,7 @@ const Hero = () => {
             <h1 className="home-text home-text2 dark:text-white/90">
               Technologies in Simple Way
             </h1>
-            <div>
+            {/* <div>
               <div
                 className="bottom-0
             top-[50%]
@@ -197,7 +197,7 @@ const Hero = () => {
                 alt="b4"
                 className="absolute hero-code-2 rounded-lg bottom-[3%] right-[2%] -z-[10]"
               />
-            </div>
+            </div> */}
           </div>
           <h4 className="text-xl font-medium">
             Hi! I&apos;m Dev Sethi, a Next.js Developer based in India.
