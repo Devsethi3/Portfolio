@@ -95,12 +95,12 @@ const TextEffect = () => {
     <>
       <div className="h-screen text-effect-hero w-full container">
         <h2 className="text-7xl mt-[8rem] absolute opacity-20 overflow-hidden font-extrabold">
-          Elevate your online presence with cutting <br /> adipisicing elit.
-          Aperiam,
+          Elevate your online presence with cutting <br /> areas for
+          improvement.
         </h2>
         <h2 className="text-7xl mt-[8rem] w-[0%] text-hover absolute overflow-hidden opacity-100 whitespace-nowrap font-extrabold">
-          Elevate your online presence with cutting <br /> adipisicing elit.
-          Aperiam,
+          Elevate your online presence with cutting <br /> areas for
+          improvement.
         </h2>
 
         <div className="relative top-[20%] -z-10">
