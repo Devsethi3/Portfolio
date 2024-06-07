@@ -117,7 +117,7 @@ const Hero = () => {
     <div className="main">
       {/* <div className="cursor fixed transition duration-400 pointer-events-none ease-in-out -translate-x-1/2 -translate-y-1/2 transform bg-white w-10 h-10 mix-blend-difference rounded-full"></div> */}
       <div className="relative -z-10 top-[30%]">
-        <div className="absolute w-full h-[90vh] inset-0 bg-[url('/herobg.png')] dark:opacity-40 opacity-0 bg-cover"></div>
+        <div className="absolute w-full h-[90vh] inset-0 bg-[url('/herobg.webp')] dark:opacity-40 opacity-0 bg-cover"></div>
         {/* <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black opacity-75"></div> */}
       </div>
 
