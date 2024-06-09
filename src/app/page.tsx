@@ -22,7 +22,6 @@ const HomePage = () => {
 
   return (
     <>
-      {/* <div className="fixed background top-[100%]"></div> */}
       <Navbar />
       <Hero />
       <TextEffect />
