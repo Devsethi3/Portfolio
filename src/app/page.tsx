@@ -22,7 +22,7 @@ const HomePage = () => {
 
   return (
     <>
-      {/* <div className="fixed background top-[100%] right-0 z-[100] w-screen h-screen bg-primary"></div> */}
+      {/* <div className="fixed background top-[100%] right-0 z-[100]"></div> */}
       <Navbar />
       <Hero />
       <TextEffect />
