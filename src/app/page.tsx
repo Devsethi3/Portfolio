@@ -29,7 +29,7 @@ const HomePage = () => {
       <About />
       <Grid />
       <Projects />
-      {/* <Model /> */}
+      <Model />
       <Contact />
     </>
   );
