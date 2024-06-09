@@ -11,14 +11,6 @@ import Contact from "@/components/Contact";
 import TextEffect from "@/components/TextEffect";
 
 const HomePage = () => {
-  // useGSAP(() => {
-  //   gsap.from(".background", {
-  //     top: 0,
-  //     duration: 1,
-  //     ease: "power1.in",
-  //     opacity: 0,
-  //   });
-  // }, []);
 
   return (
     <>
