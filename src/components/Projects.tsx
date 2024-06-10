@@ -341,9 +341,10 @@ const Projects = () => {
                     <FaArrowUpRightFromSquare />
                   </Link> */}
                   <Image
-                    src="/project-1.webp"
+                    src="/project-2.webp"
                     fill
                     alt="project-1"
+                    objectFit="cover"
                     className="rounded-lg"
                   />
                 </div>
@@ -672,9 +673,10 @@ const Projects = () => {
                     <FaArrowUpRightFromSquare />
                   </Link> */}
                   <Image
-                    src="/project-1.webp"
+                    src="/project-3.webp"
                     fill
                     alt="project-1"
+                    objectFit="cover"
                     className="rounded-lg"
                   />
                 </div>
