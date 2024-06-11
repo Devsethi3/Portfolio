@@ -304,7 +304,8 @@ const Projects = () => {
               </div>
               <div className="flex gap-10 flex-col mt-10">
                 <h3 className="text-[2.5rem] project-text leading-[2.25rem] font-extrabold">
-                  Proven Webflow Skills that come with extra peace of mind
+                  Seamless real-time messaging with chat and
+                  management features.
                 </h3>
                 <p className="text-justify project-text">
                   More than 5 years of professional experience with No-Code
