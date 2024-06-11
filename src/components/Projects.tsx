@@ -471,7 +471,8 @@ const Projects = () => {
               </div>
               <div className="flex gap-10 flex-col mt-10">
                 <h3 className="text-[2.5rem] project-text leading-[2.25rem] font-extrabold">
-                  Effortless form creation and management with drag-and-drop
+                  Engaging content discovery with infinite scrolling, custom
+                  feeds, and seamless voting features."
                 </h3>
                 <p className="text-justify project-text">
                   More than 5 years of professional experience with No-Code
