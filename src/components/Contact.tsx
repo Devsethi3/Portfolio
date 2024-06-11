@@ -9,8 +9,8 @@ const Contact = () => {
       <section className="w-full max-w-2xl mx-auto py-12 md:py-24 lg:py-32">
         <div className="px-4 md:px-6 space-y-8">
           <div className="space-y-2 text-center">
-            <h2 className="text-3xl font-bold">Get in Touch</h2>
-            <p className="text-gray-500 dark:text-gray-400">
+            <h2 className="text-4xl font-bold">Get in Touch</h2>
+            <p className="text-gray-500 text-lg font-semibold dark:text-gray-400">
               Have a question or want to work together? Fill out the form below
               and I'll get back to you as soon as possible.
             </p>
