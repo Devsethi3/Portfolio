@@ -306,11 +306,11 @@ const Projects = () => {
               </div>
               <div className="flex gap-10 flex-col mt-10">
                 <h3 className="text-[2.5rem] project-text leading-[2.25rem] font-extrabold">
-                  Seamless real-time messaging with chat and management
+                  Presenting a real-time messaging with chat and management
                   features.
                 </h3>
                 <p className="text-justify text-lg project-text">
-                  real-time messaging with advanced chat and management
+                  A Real-time messaging with advanced chat and management
                   features. This Next.js-based application supports one-on-one
                   messaging, group chat creation, and profile management.
                   <br />
@@ -478,13 +478,16 @@ const Projects = () => {
                   Engaging content discovery with infinite scrolling, custom
                   feeds, and seamless voting features."
                 </h3>
-                <p className="text-justify project-text">
-                  More than 5 years of professional experience with No-Code
-                  tools has equipped me with valuable skills. I'm honored to be
-                  recognized by the industry, including my clients and
-                  colleagues. <br /> When you work with me, you can be confident
-                  that your expectations will be met and that your project will
-                  adhere to the highest industry standards.
+                <p className="text-justify text-lg project-text">
+                  Engaging content discovery with infinite scrolling, custom
+                  feeds, and seamless voting features. This application offers a
+                  user-friendly experience similar to Reddit, allowing users to
+                  explore and interact with content effortlessly. <br /> With
+                  features designed to enhance user engagement and interaction,
+                  the app ensures a dynamic and interactive experience. Built
+                  with a focus on performance and scalability, this upvote app
+                  guarantees your project meets the highest standards of
+                  engagement and functionality.
                 </p>
                 <div className="flex items-center gap-5 project-text">
                   <Button variant="secondary">
