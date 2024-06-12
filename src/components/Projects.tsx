@@ -648,13 +648,14 @@ const Projects = () => {
                 <h3 className="text-[2.5rem] project-text leading-[2.25rem] font-extrabold">
                   Effortless form creation and management with drag-and-drop
                 </h3>
-                <p className="text-justify project-text">
-                  More than 5 years of professional experience with No-Code
-                  tools has equipped me with valuable skills. I'm honored to be
-                  recognized by the industry, including my clients and
-                  colleagues. <br /> When you work with me, you can be confident
-                  that your expectations will be met and that your project will
-                  adhere to the highest industry standards.
+                <p className="text-justify text-lg project-text">
+                  Effortless form creation and management with drag-and-drop
+                  functionality. This application simplifies the process of
+                  building and customizing forms, offering intuitive
+                  drag-and-drop features, theme toggling, and a personalized
+                  dashboard. Designed to enhance productivity and user
+                  experience, the app ensures your project meets the highest
+                  standards of efficiency and ease of use
                 </p>
                 <div className="flex items-center gap-5 project-text">
                   <Button variant="secondary">
