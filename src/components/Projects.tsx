@@ -142,11 +142,10 @@ const Projects = () => {
                   Synkron advanced collaboration with real-time features.
                 </h3>
                 <p className="text-justify text-lg project-text">
-                  Building Synkron, a SaaS project, has honed my expertise in
-                  delivering advanced collaboration solutions. With real-time
-                  updates, customizable workspaces, and seamless file
-                  management, Synkron ensures an exceptional user experience.{" "}
-                  <br />
+                  Synkron, a SaaS project, has honed my expertise in delivering
+                  advanced collaboration solutions. With real-time updates,
+                  customizable workspaces, and seamless file management, Synkron
+                  ensures an exceptional user experience. <br />
                   Leveraging modern technologies like Next.js 14, Drizzle ORM,
                   Socket.io, TypeScript, Supabase, PostgreSQL, and Shadcn UI,
                   this app embodies the highest standards of productivity and
@@ -310,13 +309,15 @@ const Projects = () => {
                   Seamless real-time messaging with chat and management
                   features.
                 </h3>
-                <p className="text-justify project-text">
-                  More than 5 years of professional experience with No-Code
-                  tools has equipped me with valuable skills. I'm honored to be
-                  recognized by the industry, including my clients and
-                  colleagues. <br /> When you work with me, you can be confident
-                  that your expectations will be met and that your project will
-                  adhere to the highest industry standards.
+                <p className="text-justify text-lg project-text">
+                  real-time messaging with advanced chat and management
+                  features. This Next.js-based application supports one-on-one
+                  messaging, group chat creation, and profile management.
+                  <br />
+                  Leveraging Prisma, MongoDB, NextAuth, and Pusher, it delivers
+                  robust performance and real-time capabilities. When you use
+                  this chat app, you can be confident that your project meets
+                  the highest standards of performance and reliability.
                 </p>
                 <div className="flex items-center gap-5 project-text">
                   <Button variant="secondary">
