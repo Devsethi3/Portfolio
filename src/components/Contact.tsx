@@ -2,6 +2,7 @@ import React from "react";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
+import { GrSend } from "react-icons/gr";
 
 const Contact = () => {
   return (
@@ -11,7 +12,7 @@ const Contact = () => {
           <div className="space-y-2 text-center">
             <h2 className="text-4xl font-bold">Get in Touch</h2>
             <p className="text-gray-500 text-lg font-semibold dark:text-gray-400">
-              Have a question or want to work together? 
+              Have a question or want to work together?
             </p>
           </div>
           <form className="space-y-4">
@@ -33,8 +34,9 @@ const Contact = () => {
                 rows={5}
               />
             </div>
-            <Button type="submit" className="w-full">
-              Submit
+            <Button type="submit" className="w-full flex items-center gap-2">
+              Send
+              <GrSend className="text-lg" />
             </Button>
           </form>
         </div>
