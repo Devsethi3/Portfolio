@@ -106,9 +106,9 @@ const About = () => {
             </h4>
             <h2 className="text-3xl font-bold">Well Documentation</h2>
             <p className="text-xl">
-              I work closely with clients to understand their goals and gather
-              feedback from users to identify pain points and areas for
-              improvement.
+              I ensure comprehensive and clear documentation, facilitating
+              seamless collaboration and understanding, while empowering users
+              and developers to easily navigate and utilize the project.
             </p>
           </div>
         </div>
