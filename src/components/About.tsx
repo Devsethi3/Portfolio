@@ -95,7 +95,7 @@ const About = () => {
             </h4>
             <h2 className="text-3xl font-bold">Smart Coding Style</h2>
             <p className="text-xl">
-              I prioritize understanding clients' goals and actively gather user
+              I prioritize understanding clients goals and actively gather user
               feedback to identify pain points and areas for improvement,
               ensuring a refined and user-centric coding approach.
             </p>
