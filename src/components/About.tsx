@@ -96,8 +96,7 @@ const About = () => {
             <h2 className="text-3xl font-bold">Smart Coding Style</h2>
             <p className="text-xl">
               I prioritize understanding clients goals and actively gather user
-              feedback to identify pain points and areas for improvement,
-              ensuring a refined and user-centric coding approach.
+              feedback to identify pain points and areas for improvement.
             </p>
           </div>
           <div className="flex about-card3 flex-col items-center gap-8 py-6">
