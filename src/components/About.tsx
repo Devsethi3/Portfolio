@@ -106,8 +106,7 @@ const About = () => {
             <h2 className="text-3xl font-bold">Well Documentation</h2>
             <p className="text-xl">
               I ensure comprehensive and clear documentation, facilitating
-              seamless collaboration and understanding, while empowering users
-              and developers to easily navigate.
+              seamless collaboration and understanding, while empowering users.
             </p>
           </div>
         </div>
