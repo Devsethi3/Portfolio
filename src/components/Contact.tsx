@@ -6,6 +6,7 @@ import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa6";
 import { ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { GrSend } from "react-icons/gr";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -78,6 +79,7 @@ const Contact = () => {
                 </div>
                 <Button type="submit" className="justify-center">
                   Send
+                  <GrSend />
                 </Button>
               </form>
             </div>
