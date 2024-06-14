@@ -10,10 +10,25 @@ import gsap from "gsap";
 gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
+  useGSAP(() => {
+    let tl1 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".contact-page",
+        markers: true,
+        start: "top 60%",
+        end: "top 0%",
+        scrub: 2,
+      },
+    });
+    tl1.to(".contact-page", {
+      background: "#7c3aed",
+      color: "#fff",
+    });
+  });
   return (
     <>
       <div>
-        <section className="w-full py-12 md:py-24 lg:py-32">
+        <section className="w-full h-screen flex items-center justify-center contact-page lg:py-32">
           <div className="container grid items-center gap-8 px-4 md:px-6 lg:grid-cols-2 lg:gap-16">
             <div className="space-y-4">
               <div className="inline-block rounded-lg cbg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
@@ -22,7 +37,7 @@ const Contact = () => {
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 Get in Touch
               </h2>
-              <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              <p className="max-w-[600px] text-white/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed ">
                 I'm always excited to connect with new people and discuss
                 potential projects. Feel free to reach out using the form below.
               </p>
