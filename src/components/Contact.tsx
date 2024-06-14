@@ -2,6 +2,12 @@ import React from "react";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
 import InputField from "./ui/InputField";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa6";
+import { ScrollTrigger } from "gsap/all";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
   return (
@@ -13,15 +19,23 @@ const Contact = () => {
               <div className="inline-block rounded-lg cbg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
                 Contact
               </div>
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 Get in Touch
-              </h1>
-              <p className="max-w-[500px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              </h2>
+              <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
                 I'm always excited to connect with new people and discuss
                 potential projects. Feel free to reach out using the form below.
               </p>
+              <h4 className="text-lg font-medium tracking-tighter sm:text-xl md:text-2xl">
+                Social Media handles :
+              </h4>
+              <div className="flex items-center gap-6">
+                <FaGithub size={30} />
+                <FaInstagram size={30} />
+                <FaLinkedin size={30} />
+              </div>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-950">
+            <div className="rounded-lg border border-gray-200 bg-white px-6 py-12 shadow-sm dark:border-gray-800 dark:bg-gray-950">
               <form className="grid gap-4">
                 <div className="grid grid-cols-2 gap-4">
                   <InputField

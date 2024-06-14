@@ -4,14 +4,11 @@ import MagicButton from "./MagicButton";
 import { FaLocationArrow } from "react-icons/fa6";
 import { ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
 import gsap from "gsap";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
-  const scrollRef = useRef();
-
   useGSAP(() => {
     let tl = gsap.timeline({
       scrollTrigger: {
