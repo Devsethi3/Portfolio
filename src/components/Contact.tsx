@@ -77,7 +77,7 @@ const Contact = () => {
                   />
                 </div>
                 <Button type="submit" className="justify-center">
-                  Submit
+                  Send
                 </Button>
               </form>
             </div>
