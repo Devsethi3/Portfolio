@@ -77,7 +77,7 @@ const Contact = () => {
                     className="min-h-[150px]"
                   />
                 </div>
-                <Button type="submit" className="justify-center">
+                <Button type="submit" className="justify-center flex items-center gap-2">
                   Send
                   <GrSend />
                 </Button>
