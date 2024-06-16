@@ -1,12 +1,7 @@
 import React from "react";
-import { Textarea } from "./ui/textarea";
-import { Button } from "./ui/button";
-import InputField from "./ui/InputField";
-import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa6";
 import { ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { GrSend } from "react-icons/gr";
 import ContactForm from "./ContactForm";
 
 gsap.registerPlugin(ScrollTrigger);
