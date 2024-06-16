@@ -16,7 +16,7 @@ const Contact = () => {
     let tl1 = gsap.timeline({
       scrollTrigger: {
         trigger: ".contact-page",
-        markers: true,
+        // markers: true,
         start: "top 60%",
         end: "top 0%",
         scrub: 2,
