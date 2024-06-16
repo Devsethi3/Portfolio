@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import { FaArrowUpRightFromSquare, FaGithub } from "react-icons/fa6";
 import { useGSAP } from "@gsap/react";
+import Model from "./Model";
 
 const Projects = () => {
   const sectionRef = useRef(null);

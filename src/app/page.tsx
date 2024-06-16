@@ -11,7 +11,6 @@ import Contact from "@/components/Contact";
 import TextEffect from "@/components/TextEffect";
 
 const HomePage = () => {
-
   return (
     <>
       <Navbar />
@@ -19,8 +18,8 @@ const HomePage = () => {
       <TextEffect />
       <About />
       <Grid />
-      <Projects />
       {/* <Model /> */}
+      <Projects />
       <Contact />
     </>
   );
