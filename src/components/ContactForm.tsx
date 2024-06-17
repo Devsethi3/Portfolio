@@ -6,38 +6,35 @@ import { Button } from "./ui/button";
 import { GrSend } from "react-icons/gr";
 import { Textarea } from "./ui/textarea";
 import emailjs from "@emailjs/browser";
-import { Input } from "./ui/input";
 
 const ContactForm = () => {
-  const form = useRef<HTMLFormElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setError(false);
-    setSuccess(false);
 
-    if (form.current) {
-      emailjs
-        .sendForm(
-          process.env.NEXT_PUBLIC_SERVICE_ID!,
-          process.env.NEXT_PUBLIC_TEMPLATE_ID!,
-          form.current,
-          process.env.NEXT_PUBLIC_PUBLIC_KEY!
-        )
-        .then(
-          () => {
-            setSuccess(true);
-            form.current?.reset();
-          },
-          () => {
-            setError(true);
-          }
-        );
-    }
+    if (!formRef.current) return;
+
+    emailjs
+      .sendForm("service_b9d6ri8", "template_d7m2lpn", formRef.current, {
+        publicKey: "wjG0qEbYkoa3KZJSJ",
+      })
+      .then(
+        () => {
+          console.log("Email sent successfully!");
+          setSuccess(true);
+          setTimeout(() => {
+            setSuccess(false);
+            formRef.current?.reset(); // Reset form fields
+          }, 3000); // Clear success message after 3 seconds
+        },
+        (error) => {
+          console.error("Failed to send email:", error);
+        }
+      );
   };
-
   return (
     <div className="mt-8">
       <div
@@ -52,7 +49,7 @@ const ContactForm = () => {
         "
       />
       <div className="rounded-lg border border-gray-200 bg-white px-6 pt-12 pb-6 shadow-sm dark:border-gray-800 dark:bg-gray-950">
-        <form ref={form} onSubmit={sendEmail} className="grid gap-4">
+        <form ref={formRef} onSubmit={sendEmail} className="grid gap-4">
           <div className="grid grid-cols-2 gap-4">
             <InputField
               id="first-name"
