@@ -114,7 +114,7 @@ const Hero = () => {
   // }, []);
 
   return (
-    <div className="main">
+    <div className="main relative">
       {/* <div className="cursor fixed transition duration-400 pointer-events-none ease-in-out -translate-x-1/2 -translate-y-1/2 transform bg-white w-10 h-10 mix-blend-difference rounded-full"></div> */}
       <div className="relative -z-10 top-[30%]">
         <div className="absolute w-full h-[90vh] inset-0 bg-[url('/herobg.webp')] dark:opacity-40 opacity-0 bg-cover"></div>
@@ -144,6 +144,17 @@ const Hero = () => {
               ✨ Dynamic Web Magic with Next JS
             </div>
           </article>
+
+          <div className="absolute hero-object top-[5%] right-[20%]">
+            <Image
+              src="/cude-illustration.webp"
+              width={100}
+              height={100}
+              loading="lazy"
+              alt="illustration"
+            />
+          </div>
+
           <div className="text-7xl font-extrabold text-center">
             <div>
               <Image
@@ -210,6 +221,24 @@ const Hero = () => {
                 className="absolute hero-code-2 rounded-lg bottom-[3%] right-[2%] -z-[10]"
               />
             </div> */}
+          </div>
+          <div className="absolute hero-object bottom-[25%] left-[10%]">
+            <Image
+              src="/triangle-illustration.webp"
+              width={100}
+              height={100}
+              loading="lazy"
+              alt="illustration"
+            />
+          </div>
+          <div className="absolute hero-object bottom-[14%] right-[15%] -z-10">
+            <Image
+              src="/illustration-ball.webp"
+              width={100}
+              height={100}
+              loading="lazy"
+              alt="illustration"
+            />
           </div>
           <h4 className="text-xl font-medium">
             Hi! I&apos;m Dev Sethi, a Next.js Developer based in India.

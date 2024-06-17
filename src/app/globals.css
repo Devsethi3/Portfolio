@@ -14,6 +14,23 @@ body {
   color: #fff;
 }
 
+.hero-object {
+  filter: drop-shadow(0 4px 32px hsla(203, 71%, 60%, 0.5));
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0.5rem);
+  }
+  50% {
+    transform: translateY(2rem);
+  }
+  100% {
+    transform: translateY(0.5rem);
+  }
+}
+
 .container {
   max-width: 1380px;
   margin-inline: auto;
@@ -95,7 +112,8 @@ body {
 }
 
 .about,
-.contact-page, .project-image {
+.contact-page,
+.project-image {
   cursor: auto;
 }
 

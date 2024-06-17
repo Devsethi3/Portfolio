@@ -70,7 +70,7 @@ const ContactForm = () => {
             <InputField
               id="user_email"
               name="user_email"
-              type="email"
+              type="text"
               placeholder="Enter Email"
               required
             />
@@ -79,7 +79,7 @@ const ContactForm = () => {
             <label htmlFor="message">Message</label>
             <Textarea
               placeholder="Enter your message"
-              className="min-h-[150px]"
+              className="min-h-[150px] text-black dark:text-white"
               name="user_message"
               required
             />
