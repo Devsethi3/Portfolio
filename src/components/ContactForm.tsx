@@ -38,8 +38,8 @@ const ContactForm = () => {
           </div>
           <div className="mt-4">
             <InputField
-              id="email"
-              name="email"
+              id="user_name"
+              name="user_name"
               type="text"
               placeholder="Enter Email"
               required
@@ -51,6 +51,7 @@ const ContactForm = () => {
               id="message"
               placeholder="Enter your message"
               className="min-h-[150px]"
+              name="user_subject"
             />
           </div>
 
