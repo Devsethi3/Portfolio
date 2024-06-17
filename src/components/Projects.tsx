@@ -8,7 +8,91 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import { FaArrowUpRightFromSquare, FaGithub } from "react-icons/fa6";
 import { useGSAP } from "@gsap/react";
-import Model from "./Model";
+
+const projects = [
+  {
+    title: "Synkron advanced collaboration with real-time features.",
+    description: `Synkron, a SaaS project, has honed my expertise in delivering advanced collaboration solutions. With real-time updates, customizable workspaces, and seamless file management, Synkron ensures an exceptional user experience. Leveraging modern technologies like Next.js 14, Drizzle ORM, Socket.io, TypeScript, Supabase, PostgreSQL, and Shadcn UI, this app embodies the highest standards of productivity and innovation.`,
+    image: "/project-1.webp",
+    stack: [
+      "/nextjs.webp",
+      "/supabase.webp",
+      "/drizzle.svg",
+      "/tailwind.svg",
+      "/postgresql.svg",
+      "/shadcn.webp",
+      "/react.webp",
+      "/typescript.svg",
+      "/figma.svg",
+      "/vercel.webp",
+      "/html-5.webp",
+      "/css-3.webp",
+      "/github.svg",
+    ],
+  },
+  {
+    title:
+      "Presenting a real-time messaging with chat and management features.",
+    description: `A Real-time messaging with advanced chat and management features. This Next.js-based application supports one-on-one messaging, group chat creation, and profile management. Leveraging Prisma, MongoDB, NextAuth, and Pusher, it delivers robust performance and real-time capabilities. When you use this chat app, you can be confident that your project meets the highest standards of performance and reliability.`,
+    image: "/project-2.webp",
+    stack: [
+      "/nextjs.webp",
+      "/supabase.webp",
+      "/drizzle.svg",
+      "/tailwind.svg",
+      "/postgresql.svg",
+      "/shadcn.webp",
+      "/react.webp",
+      "/typescript.svg",
+      "/figma.svg",
+      "/vercel.webp",
+      "/html-5.webp",
+      "/css-3.webp",
+      "/github.svg",
+    ],
+  },
+  {
+    title:
+      "Engaging content discovery with infinite scrolling, custom feeds, and seamless voting features.",
+    description: `Engaging content discovery with infinite scrolling, custom feeds, and seamless voting features. This application offers a user-friendly experience similar to Reddit, allowing users to explore and interact with content effortlessly. With features designed to enhance user engagement and interaction, the app ensures a dynamic and interactive experience. Built with a focus on performance and scalability, this upvote app guarantees your project meets the highest standards of engagement and functionality.`,
+    image: "/project-4.webp",
+    stack: [
+      "/nextjs.webp",
+      "/supabase.webp",
+      "/drizzle.svg",
+      "/tailwind.svg",
+      "/postgresql.svg",
+      "/shadcn.webp",
+      "/react.webp",
+      "/typescript.svg",
+      "/figma.svg",
+      "/vercel.webp",
+      "/html-5.webp",
+      "/css-3.webp",
+      "/github.svg",
+    ],
+  },
+  {
+    title: "Effortless form creation and management with drag-and-drop",
+    description: `Effortless form creation and management with drag-and-drop functionality. This application simplifies the process of building and customizing forms, offering intuitive drag-and-drop features, theme toggling, and a personalized dashboard. Designed to enhance productivity and user experience, the app ensures your project meets the highest standards of efficiency and ease of use.`,
+    image: "/project-3.webp",
+    stack: [
+      "/nextjs.webp",
+      "/supabase.webp",
+      "/drizzle.svg",
+      "/tailwind.svg",
+      "/postgresql.svg",
+      "/shadcn.webp",
+      "/react.webp",
+      "/typescript.svg",
+      "/figma.svg",
+      "/vercel.webp",
+      "/html-5.webp",
+      "/css-3.webp",
+      "/github.svg",
+    ],
+  },
+];
 
 const Projects = () => {
   const sectionRef = useRef(null);
@@ -36,47 +120,14 @@ const Projects = () => {
       }
     );
     return () => {
-      {
-        /* A return function for killing the animation on component unmount */
-      }
       pin.kill();
     };
   }, []);
-
-  // useGSAP(() => {
-  //   const crsr = document.querySelector(
-  //     ".project-cursor"
-  //   ) as HTMLElement | null;
-  //   const projectImage = document.querySelector(
-  //     ".project-image"
-  //   ) as HTMLElement | null;
-
-  //   projectImage?.addEventListener("mousemove", (dets) => {
-  //     gsap.to(crsr, {
-  //       x: dets.x,
-  //       y: dets.y,
-  //     });
-  //   });
-
-  //   projectImage?.addEventListener("mouseenter", (dets) => {
-  //     gsap.to(crsr, {
-  //       scale: 1,
-  //       opacity: 1,
-  //     });
-  //   });
-  //   projectImage?.addEventListener("mouseleave", (dets) => {
-  //     gsap.to(crsr, {
-  //       scale: 0,
-  //       opacity: 0,
-  //     });
-  //   });
-  // }, []);
 
   useGSAP(() => {
     let tl2 = gsap.timeline({
       scrollTrigger: {
         trigger: ".project-section",
-        // markers: true,
         start: "top 70%",
         end: "top 0%",
       },
@@ -125,687 +176,79 @@ const Projects = () => {
           top-22
         "
       />
-      {/* The section up act just as a wrapper. If the trigger (below) is the
-      first jsx element in the component, you get an error on route change */}
-
-      {/* The div below act just as a trigger. As the doc suggests, the trigger and 
-      the animation should alway be two separated refs */}
       <div ref={triggerRef}>
         <div ref={sectionRef} className="scroll-section-inner">
-          <div className="scroll-section container gap-16 flex-col md:flex-row">
-            <div className="w-[50%]">
-              <div className="relative project-text">
-                <span>Tech Expertise</span>
-                <div className="absolute w-0 project-stroke h-[2px] bg-gradient-to-r from-fuchsia-500 to-cyan-500 transform -translate-x-1/2 -translate-y-1/2 top-[50%] left-[60%]"></div>
-              </div>
-              <div className="flex gap-10 flex-col mt-10">
-                <h3 className="text-[2.5rem] project-text leading-[2.25rem] font-extrabold">
-                  Synkron advanced collaboration with real-time features.
-                </h3>
-                <p className="text-justify text-lg project-text">
-                  Synkron, a SaaS project, has honed my expertise in delivering
-                  advanced collaboration solutions. With real-time updates,
-                  customizable workspaces, and seamless file management, Synkron
-                  ensures an exceptional user experience. <br />
-                  Leveraging modern technologies like Next.js 14, Drizzle ORM,
-                  Socket.io, TypeScript, Supabase, PostgreSQL, and Shadcn UI,
-                  this app embodies the highest standards of productivity and
-                  innovation.
-                </p>
-                <div className="flex items-center gap-5 project-text">
-                  <Button variant="secondary">
-                    <Link href="/" className="flex items-center gap-5 text-lg">
-                      <FaGithub />
-                      Github
-                    </Link>
-                  </Button>
-                  <Button variant="secondary">
-                    <Link href="/" className="flex items-center gap-5 text-lg">
-                      <FaArrowUpRightFromSquare />
-                      Visit Site
-                    </Link>
-                  </Button>
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="scroll-section container gap-16 flex items-center flex-col-reverse md:flex-row"
+            >
+              <div className="w-full md:w-[50%]">
+                <div className="relative project-text">
+                  <span>Tech Expertise</span>
+                  <div className="absolute w-0 project-stroke h-[2px] bg-gradient-to-r from-fuchsia-500 to-cyan-500 transform -translate-x-1/2 -translate-y-1/2 top-[50%] left-[60%]"></div>
+                </div>
+                <div className="flex gap-10 flex-col mt-10">
+                  <h3 className="text-xl lg:text-[2.5rem] lg:leading-[2.25rem] font-extrabold project-text">
+                    {project.title}
+                  </h3>
+                  <p className="text-justify text-lg project-text">
+                    {project.description}
+                  </p>
+                  <div className="flex items-center gap-5 project-text">
+                    <Button variant="secondary">
+                      <Link
+                        href="/"
+                        className="flex items-center gap-5 text-lg"
+                      >
+                        <FaGithub />
+                        Github
+                      </Link>
+                    </Button>
+                    <Button variant="secondary">
+                      <Link
+                        href="/"
+                        className="flex items-center gap-5 text-lg"
+                      >
+                        <FaArrowUpRightFromSquare />
+                        Visit Site
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="w-[40%] project-showcase min-h-[70%] rounded-lg border shadow-2xl shadow-indigo-600/50">
-              <div className="flex items-start relative p-5 gap-6 justify-center flex-col">
-                <div className="w-[100%] project-image h-[40vh] relative rounded-md">
-                  {/* <Link
-                    href={"/"}
-                    className="text-white flex flex-col items-center justify-center text-center gap-3 text-sm"
-                  >
-                    View
-                    <FaArrowUpRightFromSquare />
-                  </Link> */}
-                  <Image
-                    src="/project-1.webp"
-                    fill
-                    alt="project-1"
-                    className="rounded-lg"
-                  />
-                </div>
-                <div className="flex items-start flex-col gap-5">
-                  <h4 className="text-xl font-semibold underline">
-                    Tech Stack
-                  </h4>
-                  <div className="flex items-center gap-4 flex-wrap">
+              <div className="w-full md:w-[40%] project-showcase min-h-[70%] rounded-lg border shadow-2xl shadow-indigo-600/50">
+                <div className="flex items-start relative p-5 gap-6 justify-center flex-col">
+                  <div className="w-full h-[40vh] relative rounded-md project-image">
                     <Image
-                      src="/nextjs.webp"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
+                      src={project.image}
+                      fill
+                      alt={`project-${index + 1}`}
+                      className="rounded-lg"
                     />
-                    <Image
-                      src="/supabase.webp"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/drizzle.svg"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/tailwind.svg"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/postgresql.svg"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/shadcn.webp"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/react.webp"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/typescript.svg"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/figma.svg"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/vercel.webp"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/html-5.webp"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/css-3.webp"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/github.svg"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
+                  </div>
+                  <div className="flex items-start flex-col gap-5">
+                    <h4 className="text-xl font-semibold underline">
+                      Tech Stack
+                    </h4>
+                    <div className="flex items-center gap-4 flex-wrap">
+                      {project.stack.map((tech, i) => (
+                        <Image
+                          key={i}
+                          src={tech}
+                          width={50}
+                          height={50}
+                          objectFit="cover"
+                          className="p-2 bg-white rounded-full"
+                          alt={`tech-${i}`}
+                        />
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="scroll-section container gap-16 flex-col md:flex-row">
-            <div className="w-[50%]">
-              <div className="relative project-text">
-                <span>Tech Expertise</span>
-                <div className="absolute w-0 project-stroke h-[2px] bg-gradient-to-r from-fuchsia-500 to-cyan-500 transform -translate-x-1/2 -translate-y-1/2 top-[50%] left-[60%]"></div>
-              </div>
-              <div className="flex gap-10 flex-col mt-10">
-                <h3 className="text-[2.5rem] project-text leading-[2.25rem] font-extrabold">
-                  Presenting a real-time messaging with chat and management
-                  features.
-                </h3>
-                <p className="text-justify text-lg project-text">
-                  A Real-time messaging with advanced chat and management
-                  features. This Next.js-based application supports one-on-one
-                  messaging, group chat creation, and profile management.
-                  <br />
-                  Leveraging Prisma, MongoDB, NextAuth, and Pusher, it delivers
-                  robust performance and real-time capabilities. When you use
-                  this chat app, you can be confident that your project meets
-                  the highest standards of performance and reliability.
-                </p>
-                <div className="flex items-center gap-5 project-text">
-                  <Button variant="secondary">
-                    <Link href="/" className="flex items-center gap-5 text-lg">
-                      <FaGithub />
-                      Github
-                    </Link>
-                  </Button>
-                  <Button variant="secondary">
-                    <Link href="/" className="flex items-center gap-5 text-lg">
-                      <FaArrowUpRightFromSquare />
-                      Visit Site
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </div>
-            <div className="w-[40%] project-showcase min-h-[70%] rounded-lg border shadow-2xl shadow-indigo-600/50">
-              <div className="flex items-start relative p-5 gap-6 justify-center flex-col">
-                <div className="w-[100%] project-image h-[40vh] relative rounded-md">
-                  {/* <Link
-                    href={"/"}
-                    className="text-white flex flex-col items-center justify-center text-center gap-3 text-sm"
-                  >
-                    View
-                    <FaArrowUpRightFromSquare />
-                  </Link> */}
-                  <Image
-                    src="/project-2.webp"
-                    fill
-                    alt="project-2"
-                    objectFit="cover"
-                    className="rounded-lg"
-                  />
-                </div>
-                <div className="flex items-start flex-col gap-5">
-                  <h4 className="text-xl font-semibold underline">
-                    Tech Stack
-                  </h4>
-                  <div className="flex items-center gap-4 flex-wrap">
-                    <Image
-                      src="/nextjs.webp"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/supabase.webp"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/drizzle.svg"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/tailwind.svg"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/postgresql.svg"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/shadcn.webp"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/react.webp"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/typescript.svg"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/figma.svg"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/vercel.webp"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/html-5.webp"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/css-3.webp"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/github.svg"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="scroll-section container gap-16 flex-col md:flex-row">
-            <div className="w-[50%]">
-              <div className="relative project-text">
-                <span>Tech Expertise</span>
-                <div className="absolute w-0 project-stroke h-[2px] bg-gradient-to-r from-fuchsia-500 to-cyan-500 transform -translate-x-1/2 -translate-y-1/2 top-[50%] left-[60%]"></div>
-              </div>
-              <div className="flex gap-10 flex-col mt-10">
-                <h3 className="text-[2.5rem] project-text leading-[2.25rem] font-extrabold">
-                  Engaging content discovery with infinite scrolling, custom
-                  feeds, and seamless voting features."
-                </h3>
-                <p className="text-justify text-lg project-text">
-                  Engaging content discovery with infinite scrolling, custom
-                  feeds, and seamless voting features. This application offers a
-                  user-friendly experience similar to Reddit, allowing users to
-                  explore and interact with content effortlessly. <br /> With
-                  features designed to enhance user engagement and interaction,
-                  the app ensures a dynamic and interactive experience. Built
-                  with a focus on performance and scalability, this upvote app
-                  guarantees your project meets the highest standards of
-                  engagement and functionality.
-                </p>
-                <div className="flex items-center gap-5 project-text">
-                  <Button variant="secondary">
-                    <Link href="/" className="flex items-center gap-5 text-lg">
-                      <FaGithub />
-                      Github
-                    </Link>
-                  </Button>
-                  <Button variant="secondary">
-                    <Link href="/" className="flex items-center gap-5 text-lg">
-                      <FaArrowUpRightFromSquare />
-                      Visit Site
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </div>
-            <div className="w-[40%] project-showcase min-h-[70%] rounded-lg border shadow-2xl shadow-indigo-600/50">
-              <div className="flex items-start relative p-5 gap-6 justify-center flex-col">
-                <div className="w-[100%] project-image h-[40vh] relative rounded-md">
-                  {/* <Link
-                    href={"/"}
-                    className="text-white flex flex-col items-center justify-center text-center gap-3 text-sm"
-                  >
-                    View
-                    <FaArrowUpRightFromSquare />
-                  </Link> */}
-                  <Image
-                    src="/project-4.webp"
-                    fill
-                    alt="project-4"
-                    objectFit="cover"
-                    className="rounded-lg"
-                  />
-                </div>
-                <div className="flex items-start flex-col gap-5">
-                  <h4 className="text-xl font-semibold underline">
-                    Tech Stack
-                  </h4>
-                  <div className="flex items-center gap-4 flex-wrap">
-                    <Image
-                      src="/nextjs.webp"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/supabase.webp"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/drizzle.svg"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/tailwind.svg"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/postgresql.svg"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/shadcn.webp"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/react.webp"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/typescript.svg"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/figma.svg"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/vercel.webp"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/html-5.webp"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/css-3.webp"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/github.svg"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="scroll-section container gap-16 flex-col md:flex-row">
-            <div className="w-[50%]">
-              <div className="relative project-text">
-                <span>Tech Expertise</span>
-                <div className="absolute w-0 project-stroke h-[2px] bg-gradient-to-r from-fuchsia-500 to-cyan-500 transform -translate-x-1/2 -translate-y-1/2 top-[50%] left-[60%]"></div>
-              </div>
-              <div className="flex gap-10 flex-col mt-10">
-                <h3 className="text-[2.5rem] project-text leading-[2.25rem] font-extrabold">
-                  Effortless form creation and management with drag-and-drop
-                </h3>
-                <p className="text-justify text-lg project-text">
-                  Effortless form creation and management with drag-and-drop
-                  functionality. This application simplifies the process of
-                  building and customizing forms, offering intuitive
-                  drag-and-drop features, theme toggling, and a personalized
-                  dashboard. Designed to enhance productivity and user
-                  experience, the app ensures your project meets the highest
-                  standards of efficiency and ease of use
-                </p>
-                <div className="flex items-center gap-5 project-text">
-                  <Button variant="secondary">
-                    <Link href="/" className="flex items-center gap-5 text-lg">
-                      <FaGithub />
-                      Github
-                    </Link>
-                  </Button>
-                  <Button variant="secondary">
-                    <Link href="/" className="flex items-center gap-5 text-lg">
-                      <FaArrowUpRightFromSquare />
-                      Visit Site
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </div>
-            <div className="w-[40%] project-showcase min-h-[70%] rounded-lg border shadow-2xl shadow-indigo-600/50">
-              <div className="flex items-start relative p-5 gap-6 justify-center flex-col">
-                <div className="w-[100%] project-image h-[40vh] relative rounded-md">
-                  {/* <Link
-                    href={"/"}
-                    className="text-white flex flex-col items-center justify-center text-center gap-3 text-sm"
-                  >
-                    View
-                    <FaArrowUpRightFromSquare />
-                  </Link> */}
-                  <Image
-                    src="/project-3.webp"
-                    fill
-                    alt="project-1"
-                    objectFit="cover"
-                    className="rounded-lg"
-                  />
-                </div>
-                <div className="flex items-start flex-col gap-5">
-                  <h4 className="text-xl font-semibold underline">
-                    Tech Stack
-                  </h4>
-                  <div className="flex items-center gap-4 flex-wrap">
-                    <Image
-                      src="/nextjs.webp"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/supabase.webp"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/drizzle.svg"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/tailwind.svg"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/postgresql.svg"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/shadcn.webp"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/react.webp"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/typescript.svg"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/figma.svg"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/vercel.webp"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/html-5.webp"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/css-3.webp"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                    <Image
-                      src="/github.svg"
-                      width={50}
-                      height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
-                      alt="nextjs"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
