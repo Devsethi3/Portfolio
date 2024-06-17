@@ -49,14 +49,14 @@ const Hero = () => {
     });
   }, []);
 
-  useGSAP(() => {
-    gsap.to(".highlight", {
-      width: 565,
-      delay: 1,
-      duration: 1,
-      ease: "power2.inOut",
-    });
-  }, []);
+  // useGSAP(() => {
+  //   gsap.to(".highlight", {
+  //     width: 565,
+  //     delay: 1,
+  //     duration: 1,
+  //     ease: "power2.inOut",
+  //   });
+  // }, []);
 
   useGSAP(() => {
     let tl = gsap.timeline({
@@ -145,7 +145,7 @@ const Hero = () => {
             </div>
           </article>
 
-          <div className="absolute hero-object top-[5%] right-[20%]">
+          <div className="absolute hero-object top-[5%] right-[10%]">
             <Image
               src="/cude-illustration.webp"
               width={100}
@@ -155,17 +155,16 @@ const Hero = () => {
             />
           </div>
 
-          <div className="text-7xl font-extrabold text-center">
-            <div>
-              <Image
-                src="/b5.svg"
-                width={400}
-                height={400}
-                alt="b4"
-                className="absolute hero-code-1 top-[0%] left-[0%] -z-10 "
-              />
-              <div
-                className="bottom-0
+          <div className="-mt-10">
+            <Image
+              src="/b5.svg"
+              width={400}
+              height={400}
+              alt="b4"
+              className="absolute hero-code-1 top-[0%] left-[0%] -z-10 "
+            />
+            <div
+              className="bottom-0
             top-[50%]
             bg-gradient-to-t
             dark:from-background
@@ -174,14 +173,15 @@ const Hero = () => {
             absolute
             z-10
           "
-              ></div>
-            </div>
+            ></div>
+          </div>
 
-            <p className="text-2xl font-normal mb-5 text-white/90">
-              {" "}
-              Ready to craft innovative web experiences?
-            </p>
+          <p className="text-xl lg:text-2xl text-center font-normal mb-5 text-white/90">
+            {" "}
+            Ready to craft innovative web experiences?
+          </p>
 
+          <div className="max-w-6xl text-center mt-[-2rem] xl:text-[3.95rem] text-4xl leading-[1] font-extrabold">
             <h1 className="home-text home-text1 relative dark:text-white/90 mb-4">
               Let's collaborate!
               <div className="highlight absolute top-0 left-[11.5rem] -z-10 bg-primary h-full w-0"></div>
@@ -192,35 +192,6 @@ const Hero = () => {
             <h1 className="home-text home-text2 dark:text-white/90">
               A Next.js developer based in India
             </h1>
-            {/* <h1 className="home-text home-text1 text-xl font-semibold relative dark:text-white/90 mb-4">
-              Ready to craft innovative web experiences?
-            </h1>
-            <h1 className="home-text home-text2 dark:text-white/90">
-              Let's collaborate! Hi, I'm Dev Sethi, <br /> A Next.js developer based in
-              India
-            </h1> */}
-            {/* <div>
-              <div
-                className="bottom-0
-            top-[50%]
-            bg-gradient-to-t
-            dark:from-background
-            from:bg-black
-            left-0
-            right-0
-            absolute
-            z-10
-          "
-              ></div>
-              <Image
-                src="/code.svg"
-                width={450}
-                height={400}
-                objectFit="cover"
-                alt="b4"
-                className="absolute hero-code-2 rounded-lg bottom-[3%] right-[2%] -z-[10]"
-              />
-            </div> */}
           </div>
           <div className="absolute hero-object bottom-[25%] left-[10%]">
             <Image
@@ -231,7 +202,7 @@ const Hero = () => {
               alt="illustration"
             />
           </div>
-          <div className="absolute hero-object bottom-[14%] right-[15%] -z-10">
+          <div className="absolute hero-object bottom-[14%] right-[15%]">
             <Image
               src="/illustration-ball.webp"
               width={100}
@@ -240,7 +211,7 @@ const Hero = () => {
               alt="illustration"
             />
           </div>
-          <h4 className="text-xl font-medium">
+          <h4 className="text-xl text-center font-medium">
             Hi! I&apos;m Dev Sethi, a Next.js Developer based in India.
           </h4>
           <div
@@ -250,11 +221,10 @@ const Hero = () => {
           h-32
           absolute
           bg-brand-primaryPurple/30
-          -z-100
           top-56
         "
           />
-          <a href="#about">
+          <a href="#about" className="z-10">
             <MagicButton
               title="See my work"
               icon={<FaLocationArrow />}

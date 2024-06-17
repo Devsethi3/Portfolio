@@ -60,7 +60,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="h-screen w-full container">
+    <div className="min-h-screen w-full container">
       <div
         className="min-h-[80%] py-14 flex items-center justify-center flex-col px-16 text-white/90 about bg-gradient-to-r
           from-brand-primaryBlue
@@ -74,7 +74,7 @@ const About = () => {
           organization or an individual looking for a website. In the age of
           information technology.
         </p>
-        <div className="flex items-center gap-10 pt-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-10 pt-6">
           <div className="flex about-card1 flex-col items-center gap-8 border-r py-6 border-white/50 pr-10">
             <h4 className="grid place-items-center w-20 h-20 rounded-full bg-white text-black text-2xl font-bold">
               01

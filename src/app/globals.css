@@ -17,6 +17,7 @@ body {
 .hero-object {
   filter: drop-shadow(0 4px 32px hsla(203, 71%, 60%, 0.5));
   animation: float 4s ease-in-out infinite;
+  z-index: -10;
 }
 
 @keyframes float {

@@ -1,104 +1,184 @@
 "use client";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { useGSAP } from "@gsap/react";
+import { useEffect } from "react";
 import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const TextEffect = () => {
-  useGSAP(() => {
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".text-effect-hero",
-        // markers: true,
-        start: "-5% 50%",
-        end: "100% 50%",
-        scrub: 1,
-      },
-    });
-    tl.to(".text-hover", {
-      width: "100%",
-    });
-  }, []);
+  useEffect(() => {
+    const mm = gsap.matchMedia();
 
-  useGSAP(() => {
-    let tl1 = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".text-effect-hero",
-        // markers: true,
-        start: "-5% 50%",
-        end: "80% 50%",
-        scrub: 1,
-      },
-    });
-    tl1.to(
-      ".sample-1",
+    mm.add(
       {
-        top: 220,
-        rotate: 0,
-        scale: 1.25,
-        opacity: 1,
-        left: "2%",
+        isDesktop: "(min-width: 1024px)",
+        isMobile: "(max-width: 1023px)",
       },
-      "a"
-    );
-    tl1.to(
-      ".sample-2",
-      {
-        top: 220,
-        rotate: 0,
-        scale: 1.25,
-        opacity: 1,
-        left: "22%",
-      },
-      "a"
-    );
-    tl1.to(
-      ".sample-3",
-      {
-        top: 220,
-        rotate: 0,
-        scale: 1.25,
-        opacity: 1,
-        right: "43%",
-      },
-      "a"
-    );
-    tl1.to(
-      ".sample-4",
-      {
-        top: 220,
-        rotate: 0,
-        scale: 1.25,
-        opacity: 1,
-        right: "23%",
-      },
-      "a"
-    );
-    tl1.to(
-      ".sample-5",
-      {
-        top: 220,
-        rotate: 0,
-        scale: 1.25,
-        opacity: 1,
-        right: "3%",
-      },
-      "a"
-    );
-  }, []);
+      (context) => {
+        const conditions = context.conditions as {
+          isDesktop: boolean;
+          isMobile: boolean;
+        };
+        const { isDesktop, isMobile } = conditions;
 
-  // Elevate your online presence with cutting edge development. Hi, I'm Dev Sethi, a Next.js developer in India. Let's build something exceptional!
+        let tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".text-effect-hero",
+            // markers: true,
+            start: "-5% 50%",
+            end: "100% 50%",
+            scrub: 1,
+          },
+        });
+
+        tl.to(".text-hover", {
+          width: "100%",
+        });
+
+        let tl1 = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".text-effect-hero",
+            // markers: true,
+            start: "-5% 50%",
+            end: "80% 50%",
+            scrub: 1,
+          },
+        });
+
+        if (isDesktop) {
+          tl1.to(
+            ".sample-1",
+            {
+              top: 220,
+              rotate: 0,
+              scale: 1.25,
+              opacity: 1,
+              left: "2%",
+            },
+            "a"
+          );
+          tl1.to(
+            ".sample-2",
+            {
+              top: 220,
+              rotate: 0,
+              scale: 1.25,
+              opacity: 1,
+              left: "22%",
+            },
+            "a"
+          );
+          tl1.to(
+            ".sample-3",
+            {
+              top: 220,
+              rotate: 0,
+              scale: 1.25,
+              opacity: 1,
+              right: "43%",
+            },
+            "a"
+          );
+          tl1.to(
+            ".sample-4",
+            {
+              top: 220,
+              rotate: 0,
+              scale: 1.25,
+              opacity: 1,
+              right: "23%",
+            },
+            "a"
+          );
+          tl1.to(
+            ".sample-5",
+            {
+              top: 220,
+              rotate: 0,
+              scale: 1.25,
+              opacity: 1,
+              right: "3%",
+            },
+            "a"
+          );
+        } else if (isMobile) {
+          tl1.to(
+            ".sample-1",
+            {
+              top: 150,
+              rotate: 0,
+              scale: 1.1,
+              opacity: 1,
+              left: "5%",
+            },
+            "a"
+          );
+          tl1.to(
+            ".sample-2",
+            {
+              top: 150,
+              rotate: 0,
+              scale: 1.1,
+              opacity: 1,
+              left: "25%",
+            },
+            "a"
+          );
+          tl1.to(
+            ".sample-3",
+            {
+              top: 150,
+              rotate: 0,
+              scale: 1.1,
+              opacity: 1,
+              right: "45%",
+            },
+            "a"
+          );
+          tl1.to(
+            ".sample-4",
+            {
+              top: 150,
+              rotate: 0,
+              scale: 1.1,
+              opacity: 1,
+              right: "25%",
+            },
+            "a"
+          );
+          tl1.to(
+            ".sample-5",
+            {
+              top: 150,
+              rotate: 0,
+              scale: 1.1,
+              opacity: 1,
+              right: "5%",
+            },
+            "a"
+          );
+        }
+
+        return () => {
+          // context.revert();
+        };
+      }
+    );
+
+    return () => {
+      mm.revert();
+    };
+  }, []);
 
   return (
     <>
       <div className="h-screen text-effect-hero w-full container">
-        <h2 className="text-7xl mt-[8rem] absolute opacity-20 overflow-hidden font-extrabold">
+        <h2 className="text-3xl lg:text-7xl mt-[8rem] absolute opacity-20 overflow-hidden font-extrabold">
           Elevate your online presence with cutting <br /> areas for
           improvement.
         </h2>
-        <h2 className="text-7xl mt-[8rem] w-[0%] text-hover absolute overflow-hidden opacity-100 whitespace-nowrap font-extrabold">
+        <h2 className="text-3xl lg:text-7xl mt-[8rem] w-[0%] text-hover absolute overflow-hidden opacity-100 whitespace-nowrap font-extrabold">
           Elevate your online presence with cutting <br /> areas for
           improvement.
         </h2>
