@@ -101,27 +101,30 @@ const Projects = () => {
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-    const pin = gsap.fromTo(
-      sectionRef.current,
-      {
-        translateX: 0,
-      },
-      {
-        translateX: "-300vw",
-        ease: "none",
-        duration: 1,
-        scrollTrigger: {
-          trigger: triggerRef.current,
-          start: "top top",
-          end: "2000 top",
-          scrub: 0.6,
-          pin: true,
+    if (window.innerWidth >= 768) {
+      const pin = gsap.fromTo(
+        sectionRef.current,
+        {
+          translateX: 0,
         },
-      }
-    );
-    return () => {
-      pin.kill();
-    };
+        {
+          translateX: "-300vw",
+          ease: "none",
+          duration: 1,
+          scrollTrigger: {
+            trigger: triggerRef.current,
+            start: "top top",
+            end: "2000 top",
+            markers: true,
+            scrub: 2,
+            pin: true,
+          },
+        }
+      );
+      return () => {
+        pin.kill();
+      };
+    }
   }, []);
 
   useGSAP(() => {
@@ -177,22 +180,25 @@ const Projects = () => {
         "
       />
       <div ref={triggerRef}>
-        <div ref={sectionRef} className="scroll-section-inner">
+        <div
+          ref={sectionRef}
+          className="scroll-section-inner flex flex-col md:flex-row"
+        >
           {projects.map((project, index) => (
             <div
               key={index}
-              className="scroll-section container gap-16 flex items-center flex-col-reverse md:flex-row"
+              className="scroll-section py-10 justify-center items-center container gap-6 lg:gap-16 flex flex-col-reverse md:flex-row"
             >
-              <div className="w-full md:w-[50%]">
+              <div className="md:w-[50%] w-full">
                 <div className="relative project-text">
-                  <span>Tech Expertise</span>
+                  <span className="text-sm lg:text-base">Tech Expertise</span>
                   <div className="absolute w-0 project-stroke h-[2px] bg-gradient-to-r from-fuchsia-500 to-cyan-500 transform -translate-x-1/2 -translate-y-1/2 top-[50%] left-[60%]"></div>
                 </div>
-                <div className="flex gap-10 flex-col mt-10">
-                  <h3 className="text-xl lg:text-[2.5rem] lg:leading-[2.25rem] font-extrabold project-text">
+                <div className="flex gap-5 lg:gap-10 flex-col mt-4">
+                  <h3 className="text-[1.4rem] leading-tight lg:text-[2.5rem] lg:leading-[2.25rem] font-extrabold project-text">
                     {project.title}
                   </h3>
-                  <p className="text-justify text-lg project-text">
+                  <p className="text-sm lg:text-lg text-justify project-text">
                     {project.description}
                   </p>
                   <div className="flex items-center gap-5 project-text">
@@ -217,36 +223,7 @@ const Projects = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-full md:w-[40%] project-showcase min-h-[70%] rounded-lg border shadow-2xl shadow-indigo-600/50">
-                <div className="flex items-start relative p-5 gap-6 justify-center flex-col">
-                  <div className="w-full h-[40vh] relative rounded-md project-image">
-                    <Image
-                      src={project.image}
-                      fill
-                      alt={`project-${index + 1}`}
-                      className="rounded-lg"
-                    />
-                  </div>
-                  <div className="flex items-start flex-col gap-5">
-                    <h4 className="text-xl font-semibold underline">
-                      Tech Stack
-                    </h4>
-                    <div className="flex items-center gap-4 flex-wrap">
-                      {project.stack.map((tech, i) => (
-                        <Image
-                          key={i}
-                          src={tech}
-                          width={50}
-                          height={50}
-                          objectFit="cover"
-                          className="p-2 bg-white rounded-full"
-                          alt={`tech-${i}`}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <div className="w-[50%] bg-emerald-400 h-[60vh]"></div>
             </div>
           ))}
         </div>

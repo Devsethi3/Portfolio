@@ -176,7 +176,7 @@ const Hero = () => {
             ></div>
           </div>
 
-          <p className="text-xl lg:text-2xl text-center font-normal mb-5 text-white/90">
+          <p className="text-xl lg:text-2xl text-center font-normal mb-5">
             {" "}
             Ready to craft innovative web experiences?
           </p>
