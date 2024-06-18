@@ -18,6 +18,7 @@ import ThemeSwitcher from "./ThemeSwitcher";
 import { Button } from "./ui/button";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
+import { HiMenu } from "react-icons/hi";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -76,7 +77,7 @@ export function Navbar() {
             Dev Prasad Sethi
           </p> */}
         </div>
-        <NavigationMenu className="hidden md:block">
+        <NavigationMenu className="hidden md:block nav-menu">
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuTrigger>Tech Contribution</NavigationMenuTrigger>
@@ -141,7 +142,7 @@ export function Navbar() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        <div className="flex items-center gap-10">
+        <div className="flex items-center gap-4">
           {/* Theme Toggler */}
 
           <ThemeSwitcher />
@@ -149,6 +150,11 @@ export function Navbar() {
           <Button className="font-medium" variant="secondary">
             Say Hello 👋
           </Button>
+          <div className="block md:hidden">
+            <Button size="icon" variant="secondary">
+              <HiMenu size={20} />
+            </Button>
+          </div>
         </div>
       </div>
     </div>
