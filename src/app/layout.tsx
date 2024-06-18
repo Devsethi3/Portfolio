@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Kurale } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/ThemeProvider";
+import Navbar from "@/components/Navbar";
 
 const font = Kurale({ subsets: ["latin"], weight: ["400"] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Navbar />
           {children}
         </ThemeProvider>
       </body>

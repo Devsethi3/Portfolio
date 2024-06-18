@@ -13,7 +13,7 @@ import Navbar from "@/components/Navbar";
 const HomePage = () => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero />
       <TextEffect />
       <About />
