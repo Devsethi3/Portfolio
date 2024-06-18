@@ -115,8 +115,8 @@ const Projects = () => {
             trigger: triggerRef.current,
             start: "top top",
             end: "2000 top",
-            markers: true,
-            scrub: 2,
+            // markers: true,
+            scrub: 0.6,
             pin: true,
           },
         }
@@ -223,7 +223,31 @@ const Projects = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-[50%] bg-emerald-400 h-[60vh]"></div>
+              <div className="md:w-[50%] w-full p-4 flex flex-col gap-6 project-showcase border shadow-2xl shadow-indigo-600/50 rounded-lg min-h-[60vh]">
+                <div className="relative w-full h-[35vh]">
+                  <Image
+                    src={project.image}
+                    fill
+                    alt={`project-${index + 1}`}
+                    objectFit="cover"
+                    className="rounded-lg"
+                  />
+                </div>
+                <h4 className="text-xl font-semibold underline">Tech Stack</h4>
+                <div className="flex items-center gap-4 flex-wrap">
+                  {project.stack.map((tech, i) => (
+                    <Image
+                      key={i}
+                      src={tech}
+                      width={50}
+                      height={50}
+                      objectFit="cover"
+                      className="p-2 bg-white rounded-full"
+                      alt={`tech-${i}`}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
           ))}
         </div>

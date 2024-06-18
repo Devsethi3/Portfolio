@@ -161,7 +161,7 @@ const Hero = () => {
               width={400}
               height={400}
               alt="b4"
-              className="absolute hero-code-1 top-[0%] left-[0%] -z-10 "
+              className="absolute hidden md:block hero-code-1 top-[0%] left-[0%] -z-10 "
             />
             <div
               className="bottom-0
@@ -202,7 +202,7 @@ const Hero = () => {
               alt="illustration"
             />
           </div>
-          <div className="absolute hero-object bottom-[14%] right-[15%]">
+          <div className="absolute hidden md:block hero-object bottom-[14%] right-[15%]">
             <Image
               src="/illustration-ball.webp"
               width={100}
