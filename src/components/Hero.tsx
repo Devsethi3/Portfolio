@@ -185,7 +185,7 @@ const Hero = () => {
             <h1 className="home-text home-text1 relative dark:text-white/90 mb-4">
               Let's collaborate!
               <div className="highlight absolute top-0 left-[11.5rem] -z-10 bg-primary h-full w-0"></div>
-              <span className="hero-text text-white p-3 rounded-md">
+              <span className="hero-text p-3 rounded-md">
                 Hi, I'm Dev Sethi,
               </span>{" "}
             </h1>
