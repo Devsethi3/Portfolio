@@ -1,6 +1,5 @@
 "use client";
 
-import { Navbar } from "@/components/Navbar";
 import React from "react";
 import Hero from "@/components/Hero";
 import Grid from "@/components/Grid";
@@ -9,6 +8,7 @@ import Projects from "@/components/Projects";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import TextEffect from "@/components/TextEffect";
+import Navbar from "@/components/Navbar";
 
 const HomePage = () => {
   return (
