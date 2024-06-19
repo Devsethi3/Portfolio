@@ -146,6 +146,29 @@ body {
     transform: rotate(360deg);
   }
 }
+.project-card {
+  background-color: white;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.2s ease-out;
+  transform: rotateX(0deg) rotateY(0deg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+}
+
+.project-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h3 {
+  color: #333;
+}
+
+.project-card p {
+  color: #555;
+}
 
 @media screen and (max-width: 768px) {
   .nav-menu {
