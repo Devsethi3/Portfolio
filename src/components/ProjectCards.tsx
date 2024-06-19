@@ -3,6 +3,8 @@
 import React, { useRef } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
+import { Button } from "./ui/button";
+import { FaArrowRight, FaGithub } from "react-icons/fa6";
 
 interface ProjectCardsProps {
   title: string;
@@ -66,7 +68,7 @@ const ProjectCards: React.FC<ProjectCardsProps> = ({
         />
       </div>
       <h3 className="text-xl lg:text-2xl font-bold mt-4">{title}</h3>
-      <p className="text-sm lg:text-lg truncate mt-2">{description}</p>
+      <p className="text-sm lg:text-lg mt-2 line-clamp-2">{description}</p>{" "}
       <div className="flex flex-wrap gap-2 mt-4">
         {techstack.map((tech, index) => (
           <span
@@ -77,23 +79,14 @@ const ProjectCards: React.FC<ProjectCardsProps> = ({
           </span>
         ))}
       </div>
-      <div className="flex mt-4 gap-4">
-        <a
-          href={links.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-500"
-        >
-          GitHub
-        </a>
-        <a
-          href={links.site}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-500"
-        >
+      <div className="flex mt-4 gap-4 justify-end">
+        <Button variant="secondary" size="icon">
+          <FaGithub size={20} />
+        </Button>
+        <Button>
           Visit Site
-        </a>
+          {/* <FaArrowRight size={20} /> */}
+        </Button>
       </div>
     </div>
   );

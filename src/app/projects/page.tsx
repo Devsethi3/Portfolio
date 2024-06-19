@@ -46,17 +46,33 @@ const ProjectsPage = () => {
       },
     },
     {
-      title: "Upvot : Voting App",
+      title: "Quick Form : Drag and Drop",
       description:
         "Engaging content discovery with infinite scrolling, custom feeds, and seamless voting features. This application offers a user-friendly experience similar to Reddit, allowing users to explore and interact with content effortlessly. With features designed to enhance user engagement and interaction, the app ensures a dynamic and interactive experience. Built with a focus on performance and scalability.",
       image: "/project-3.webp",
-      techstack: [
-        "Next.js",
-        "Supabase",
-        "Drizzle",
-        "Tailwind",
-        "PostgreSQL",
-      ],
+      techstack: ["Next.js", "Supabase", "Drizzle", "Tailwind", "PostgreSQL"],
+      links: {
+        github: "https://github.com/your-repo/upvot",
+        site: "https://upvot.example.com",
+      },
+    },
+    {
+      title: "Upvot : Voting App",
+      description:
+        "Engaging content discovery with infinite scrolling, custom feeds, and seamless voting features. This application offers a user-friendly experience similar to Reddit, allowing users to explore and interact with content effortlessly. With features designed to enhance user engagement and interaction, the app ensures a dynamic and interactive experience. Built with a focus on performance and scalability.",
+      image: "/project-4.webp",
+      techstack: ["Next.js", "Supabase", "Drizzle", "Tailwind", "PostgreSQL"],
+      links: {
+        github: "https://github.com/your-repo/upvot",
+        site: "https://upvot.example.com",
+      },
+    },
+    {
+      title: "Upvot : Voting App",
+      description:
+        "Engaging content discovery with infinite scrolling, custom feeds, and seamless voting features. This application offers a user-friendly experience similar to Reddit, allowing users to explore and interact with content effortlessly. With features designed to enhance user engagement and interaction, the app ensures a dynamic and interactive experience. Built with a focus on performance and scalability.",
+      image: "/project-1.webp",
+      techstack: ["Next.js", "Supabase", "Drizzle", "Tailwind", "PostgreSQL"],
       links: {
         github: "https://github.com/your-repo/upvot",
         site: "https://upvot.example.com",
