@@ -182,7 +182,6 @@ const TextEffect = () => {
           Elevate your online presence with cutting <br /> areas for
           improvement.
         </h2>
-
         <div className="relative top-[20%] -z-10">
           <Image
             src="/showcase-1.webp"

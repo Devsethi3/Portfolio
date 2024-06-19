@@ -125,7 +125,7 @@ export const BentoGridItem = ({
           )}
         >
           {/* change the order of the title and des, font-extralight, remove text-xs text-neutral-600 dark:text-neutral-300 , change the text-color */}
-          <div className="font-extralight md:max-w-32 md:text-xs lg:text-base text-sm z-10">
+          <div className="font-extralight text-white/80 md:max-w-32 md:text-xs lg:text-base text-sm z-10">
             {description}
           </div>
           {/* add text-3xl max-w-96 , remove text-neutral-600 dark:text-neutral-300*/}
@@ -148,7 +148,7 @@ export const BentoGridItem = ({
                   <span
                     key={i}
                     className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                    lg:opacity-100 rounded-lg text-gray-400 text-center bg-[#10132E]"
                   >
                     {item}
                   </span>
@@ -161,7 +161,7 @@ export const BentoGridItem = ({
                   <span
                     key={i}
                     className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                    lg:opacity-100 text-gray-400 rounded-lg text-center bg-[#10132E]"
                   >
                     {item}
                   </span>

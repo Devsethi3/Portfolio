@@ -3,6 +3,7 @@ import { Kurale } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import Navbar from "@/components/Navbar";
+import NextTopLoader from "nextjs-toploader";
 
 const font = Kurale({ subsets: ["latin"], weight: ["400"] });
 
@@ -22,6 +23,14 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/logo.svg" type="image/x-icon" />
       </head>
       <body className={font.className}>
+        <NextTopLoader
+          color="#7C3AED"
+          crawlSpeed={200}
+          height={4}
+          crawl={false}
+          showSpinner={false}
+          easing="ease"
+        />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

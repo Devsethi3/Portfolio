@@ -23,7 +23,7 @@ const InputField: React.FC<InputFieldProps> = ({
         id={id}
         name={name}
         type={type}
-        className={`border-b text-black dark:text-white border-gray-300 w-full py-1 focus:border-b-2 dark:focus:border-white focus:border-black transition-colors focus:outline-none peer bg-inherit placeholder-transparent ${className}`}
+        className={`border-b text-black dark:text-white border-gray-700 w-full py-1 focus:border-b-2 dark:focus:border-white focus:border-black transition-colors focus:outline-none peer bg-inherit placeholder-transparent ${className}`}
         placeholder={placeholder}
         required={required}
       />

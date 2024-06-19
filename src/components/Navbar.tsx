@@ -14,7 +14,7 @@ const Navbar = () => {
           <div className="nav-menu flex items-center gap-16">
             <Link href="/">Home</Link>
             <Link href="/projects">Explore Projects</Link>
-            <Link href="/">About</Link>
+            <Link href="/about">About</Link>
           </div>
           <div className="flex items-center gap-4 md:gap-8 lg:gap-16">
             <ThemeSwitcher />
