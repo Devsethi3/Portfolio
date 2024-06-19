@@ -1,34 +1,122 @@
+"use client";
+
 import React from "react";
 import { FaCode, FaRegLightbulb } from "react-icons/fa6";
 import { BsPuzzleFill } from "react-icons/bs";
 import { FiType } from "react-icons/fi";
 import { FlipWords } from "@/components/ui/flip-words";
+import Image from "next/image";
 
 const AboutPage = () => {
-  const words = [
-    "responsive",
-    "innovative",
-    "efficient",
-    "intuitive",
-    "user-friendly",
-    "scalable",
-    "interactive",
-    "fast",
-    "reliable",
-    "creative",
-  ];
+  const words = ["Perfectionist", "Alchemist", "Whisperer"];
 
   return (
     <div>
       <div>
-        <section className="w-full py-12 md:py-24 lg:py-32 container">
+        <section className="w-full py-8 md:py-24 lg:py-32 container relative">
+          <div
+            className="w-[30%]
+          blur-[120px]
+          rounded-full
+          h-32
+          absolute
+          bg-brand-primaryPurple/50
+          -z-10
+          top-22
+        "
+          />
+          <Image
+            src="/stars.png"
+            width={50}
+            height={50}
+            alt="stars"
+            className="absolute lg:top-[30%] lg:left-[25%] top-[5%] left-[5%]"
+          />
           <div className="text-3xl md:text-5xl lg:text-7xl text-center mx-auto font-bold text-neutral-600 dark:text-neutral-400">
-            Build
-            <span className="ml-1 lg:ml-2"><FlipWords words={words} /></span><br />
-            websites with Dev Sethi
+            Meet the Maker <br />
+            The Code
+            <span className="ml-1 lg:ml-2">
+              <FlipWords words={words} />
+            </span>
+            <br />
           </div>
         </section>
       </div>
+
+      <div className="overflow-hidden py-16">
+        <div className="w-full bg-emerald-500 py-6 rotate-3 sliding-text">
+          <div className="flex items-center sliding-wrapper-reverse">
+            <span className="text-5xl mx-5 whitespace-nowrap font-extrabold text-white sliding-span">
+              I am Dev Prasad Sethi
+            </span>
+            <span className="text-5xl mx-5 whitespace-nowrap font-extrabold text-white sliding-span">
+              I am Dev Prasad Sethi
+            </span>
+            <span className="text-5xl mx-5 whitespace-nowrap font-extrabold text-white sliding-span">
+              I am Dev Prasad Sethi
+            </span>
+            <span className="text-5xl mx-5 whitespace-nowrap font-extrabold text-white sliding-span">
+              I am Dev Prasad Sethi
+            </span>
+          </div>
+        </div>
+        <div className="w-full bg-indigo-500 py-6 -mt-8 -rotate-3 sliding-text">
+          <div className="flex items-center sliding-wrapper">
+            <span className="text-5xl mx-5 whitespace-nowrap font-extrabold text-white sliding-span">
+              I am Dev Prasad Sethi
+            </span>
+            <span className="text-5xl mx-5 whitespace-nowrap font-extrabold text-white sliding-span">
+              I am Dev Prasad Sethi
+            </span>
+            <span className="text-5xl mx-5 whitespace-nowrap font-extrabold text-white sliding-span">
+              I am Dev Prasad Sethi
+            </span>
+            <span className="text-5xl mx-5 whitespace-nowrap font-extrabold text-white sliding-span">
+              I am Dev Prasad Sethi
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <style jsx>{`
+        @keyframes slide {
+          0% {
+            transform: translateX(100%);
+          }
+          100% {
+            transform: translateX(-100%);
+          }
+        }
+
+        @keyframes slide-reverse {
+          0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(100%);
+          }
+        }
+
+        .sliding-text {
+          overflow: hidden;
+        }
+
+        .sliding-wrapper {
+          display: flex;
+          white-space: nowrap;
+          animation: slide 20s linear infinite;
+        }
+
+        .sliding-wrapper-reverse {
+          display: flex;
+          white-space: nowrap;
+          animation: slide-reverse 20s linear infinite;
+        }
+
+        .sliding-span {
+          display: inline-block;
+        }
+      `}</style>
     </div>
   );
 };
