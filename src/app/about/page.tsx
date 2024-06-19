@@ -13,7 +13,7 @@ const AboutPage = () => {
   return (
     <div>
       <div>
-        <section className="w-full py-8 md:py-24 lg:py-32 container relative">
+        <section className="w-full pt-14 md:py-24 lg:pt-32 container relative">
           <div
             className="w-[30%]
           blur-[120px]
@@ -30,9 +30,18 @@ const AboutPage = () => {
             width={50}
             height={50}
             alt="stars"
+            loading="lazy"
             className="absolute lg:top-[30%] lg:left-[25%] top-[5%] left-[5%]"
           />
-          <div className="text-3xl md:text-5xl lg:text-7xl text-center mx-auto font-bold text-neutral-600 dark:text-neutral-400">
+          <Image
+            src="/star-icon.png"
+            width={50}
+            height={50}
+            alt="star-icon"
+            loading="lazy"
+            className="absolute lg:top-[20%] bottom-[-20%] lg:right-[25%] right-0 -z-10 rotate-180"
+          />
+          <div className="text-4xl md:text-5xl lg:text-7xl text-center mx-auto font-bold text-neutral-600 dark:text-neutral-400">
             Meet the Maker <br />
             The Code
             <span className="ml-1 lg:ml-2">
@@ -43,35 +52,35 @@ const AboutPage = () => {
         </section>
       </div>
 
-      <div className="overflow-hidden py-16">
-        <div className="w-full bg-emerald-500 py-6 rotate-3 sliding-text">
+      <div className="overflow-hidden relative h-[40vh] pt-12">
+        <div className="w-full absolute z-[5] -rotate-3 bg-emerald-500 py-6 sliding-text">
           <div className="flex items-center sliding-wrapper-reverse">
-            <span className="text-5xl mx-5 whitespace-nowrap font-extrabold text-white sliding-span">
+            <span className="text-3xl md:text-4xl lg:text-5xl mx-5 whitespace-nowrap font-extrabold text-white sliding-span">
               I am Dev Prasad Sethi
             </span>
-            <span className="text-5xl mx-5 whitespace-nowrap font-extrabold text-white sliding-span">
+            <span className="text-3xl md:text-4xl lg:text-5xl mx-5 whitespace-nowrap font-extrabold text-white sliding-span">
               I am Dev Prasad Sethi
             </span>
-            <span className="text-5xl mx-5 whitespace-nowrap font-extrabold text-white sliding-span">
+            <span className="text-3xl md:text-4xl lg:text-5xl mx-5 whitespace-nowrap font-extrabold text-white sliding-span">
               I am Dev Prasad Sethi
             </span>
-            <span className="text-5xl mx-5 whitespace-nowrap font-extrabold text-white sliding-span">
+            <span className="text-3xl md:text-4xl lg:text-5xl mx-5 whitespace-nowrap font-extrabold text-white sliding-span">
               I am Dev Prasad Sethi
             </span>
           </div>
         </div>
-        <div className="w-full bg-indigo-500 py-6 -mt-8 -rotate-3 sliding-text">
+        <div className="w-full absolute z-[10] bottom-[20%] bg-indigo-500 rotate-3 py-6 sliding-text">
           <div className="flex items-center sliding-wrapper">
-            <span className="text-5xl mx-5 whitespace-nowrap font-extrabold text-white sliding-span">
+            <span className="text-3xl md:text-4xl lg:text-5xl mx-5 whitespace-nowrap font-extrabold text-white sliding-span">
               I am Dev Prasad Sethi
             </span>
-            <span className="text-5xl mx-5 whitespace-nowrap font-extrabold text-white sliding-span">
+            <span className="text-3xl md:text-4xl lg:text-5xl mx-5 whitespace-nowrap font-extrabold text-white sliding-span">
               I am Dev Prasad Sethi
             </span>
-            <span className="text-5xl mx-5 whitespace-nowrap font-extrabold text-white sliding-span">
+            <span className="text-3xl md:text-4xl lg:text-5xl mx-5 whitespace-nowrap font-extrabold text-white sliding-span">
               I am Dev Prasad Sethi
             </span>
-            <span className="text-5xl mx-5 whitespace-nowrap font-extrabold text-white sliding-span">
+            <span className="text-3xl md:text-4xl lg:text-5xl mx-5 whitespace-nowrap font-extrabold text-white sliding-span">
               I am Dev Prasad Sethi
             </span>
           </div>
@@ -117,6 +126,61 @@ const AboutPage = () => {
           display: inline-block;
         }
       `}</style>
+
+      <section className="py-10 container">
+        <p className="text-2xl text-center mb-12 font-bold">
+          Hi! I'm Dev Sethi, a full stack web developer and a freelance UI/UX
+          designer. I've been a part of Sheryians for 2 years and taught more
+          than 500+ students full-stack web development, As a web developer, my
+          best work is Sheryians's website which is a course-selling website
+          similar to awwwards or udemy. Along with that I've also created more
+          than 50+ websites for my clients in Bhopal.
+        </p>
+        <div className="grid gap-4 text-white">
+          <div className="grid grid-cols-2 gap-4">
+            <div className="rounded-lg bg-indigo-600 p-4 flex flex-col items-center justify-center">
+              <FaCode className="w-8 h-8" />
+              <h3 className="text-xl font-bold mt-2">Coding</h3>
+              <p className="text-sm lg:text-base mt-2 text-center">
+                Proficient in modern web development technologies.
+              </p>
+            </div>
+            <div className="rounded-lg bg-rose-500 p-4 flex flex-col items-center justify-center">
+              <FiType className="w-8 h-8" />
+              <h3 className="text-xl font-bold mt-2">Design</h3>
+              <p className="text-sm lg:text-base mt-2 text-center">
+                Passionate about creating visually appealing designs.
+              </p>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="rounded-lg bg-emerald-600 p-4 flex flex-col items-center justify-center">
+              <BsPuzzleFill className="w-8 h-8" />
+              <h3 className="text-xl font-bold mt-2 text-center">
+                Problem Solving
+              </h3>
+              <p className="text-sm lg:text-base mt-2 text-center">
+                Enjoy tackling complex challenges and finding creative
+                solutions.
+              </p>
+            </div>
+            <div className="rounded-lg bg-cyan-600 p-4 flex flex-col items-center justify-center">
+              <FaRegLightbulb className="w-8 h-8" />
+              <h3 className="text-xl font-bold mt-2">Innovation</h3>
+              <p className="text-sm lg:text-base mt-2 text-center">
+                Constantly exploring new ideas and technologies to push the
+                boundaries.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="container py-10">
+        <h2 className="text-4xl md:text-6xl lg:text-8xl font-extrabold">
+          Things I'm <span className="text-emerald-500 underline">good</span> at
+        </h2>
+      </section>
     </div>
   );
 };
