@@ -1,35 +1,26 @@
 import React from "react";
-import { ScrollTrigger } from "gsap/all";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 import ContactForm from "./ContactForm";
 
-gsap.registerPlugin(ScrollTrigger);
-
 const Contact = () => {
-  useGSAP(() => {
-    let tl1 = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".contact-page",
-        // markers: true,
-        start: "top 60%",
-        end: "top 0%",
-        scrub: 2,
-      },
-    });
-    tl1.to(".contact-page", {
-      background: "#7c3aed",
-      color: "#fff",
-    });
-  });
   return (
     <>
-      <div className="flex contact-page items-center justify-center w-full h-screen">
+      <div className="flex items-center justify-center w-full h-screen">
         <div className="">
+          <div
+            className="w-[30%]
+          blur-[120px]
+          rounded-full
+          h-32
+          absolute
+          bg-brand-primaryPurple/20
+          -z-10
+          top-22
+        "
+          />
           <h2 className="text-4xl text-center font-bold">
             Ready to Work Together?
           </h2>
-          <p className="text-lg text-center mt-2">
+          <p className="text-lg text-center mt-2 mb-8">
             Got a question or interested in collaborating with us? We're here to
             help! <br /> Simply fill out the form below or drop us an email.
           </p>

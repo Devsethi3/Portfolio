@@ -349,7 +349,7 @@ const AboutPage = () => {
                 src={tool.image}
                 alt={tool.name}
                 fill
-                className="object-cover rounded-xl p-2 bg-white"
+                className="object-cover rounded-xl p-2 dark:bg-white bg-secondary border"
               />
             </div>
           ))}
