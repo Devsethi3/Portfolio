@@ -16,7 +16,7 @@ const projects = [
     image: "/project-1.webp",
     stack: [
       "/nextjs.webp",
-      "/supabase.webp",
+      "/supabase.png",
       "/drizzle.svg",
       "/tailwind.svg",
       "/postgresql.svg",
@@ -24,7 +24,7 @@ const projects = [
       "/react.webp",
       "/typescript.svg",
       "/figma.svg",
-      "/vercel.webp",
+      "/vercel.png",
       "/html-5.webp",
       "/css-3.webp",
       "/github.svg",
@@ -229,8 +229,7 @@ const Projects = () => {
                     src={project.image}
                     fill
                     alt={`project-${index + 1}`}
-                    objectFit="cover"
-                    className="rounded-lg"
+                    className="rounded-lg object-cover"
                   />
                 </div>
                 <h4 className="text-xl font-semibold underline">Tech Stack</h4>
@@ -241,8 +240,7 @@ const Projects = () => {
                       src={tech}
                       width={50}
                       height={50}
-                      objectFit="cover"
-                      className="p-2 bg-white rounded-full"
+                      className="p-2 bg-white rounded-full object-cover"
                       alt={`tech-${i}`}
                     />
                   ))}
