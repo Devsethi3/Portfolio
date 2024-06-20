@@ -6,16 +6,38 @@ import { Button } from "./ui/button";
 import { GrSend } from "react-icons/gr";
 import { Textarea } from "./ui/textarea";
 import emailjs from "@emailjs/browser";
+import toast from "react-hot-toast";
+import { LuLoader2 } from "react-icons/lu";
 
 const ContactForm = () => {
   const formRef = useRef<HTMLFormElement>(null);
-  const [error, setError] = useState(false);
-  const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const validateEmail = (email: string) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  };
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!formRef.current) return;
+
+    const form = formRef.current;
+    const email = form.user_email.value;
+    const message = form.user_message.value;
+
+    if (!validateEmail(email)) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+
+    if (message.trim() === "") {
+      toast.error("Message cannot be empty.");
+      return;
+    }
+
+    setLoading(true);
 
     emailjs
       .sendForm("service_b9d6ri8", "template_d7m2lpn", formRef.current, {
@@ -23,18 +45,18 @@ const ContactForm = () => {
       })
       .then(
         () => {
-          console.log("Email sent successfully!");
-          setSuccess(true);
-          setTimeout(() => {
-            setSuccess(false);
-            formRef.current?.reset(); // Reset form fields
-          }, 3000); // Clear success message after 3 seconds
+          toast.success("Email sent successfully!");
+          setLoading(false);
+          formRef.current?.reset(); // Reset form fields
         },
         (error) => {
+          toast.error("Failed to send email. Please try again later.");
           console.error("Failed to send email:", error);
+          setLoading(false);
         }
       );
   };
+
   return (
     <div className="py-10">
       <div className="rounded-lg border shadow-2xl shadow-indigo-600/50 border-gray-200 bg-white px-6 pt-12 pb-6 dark:border-gray-800 dark:bg-gray-950">
@@ -59,7 +81,7 @@ const ContactForm = () => {
             <InputField
               id="user_email"
               name="user_email"
-              type="text"
+              type="email"
               placeholder="Enter Email"
               required
             />
@@ -76,18 +98,20 @@ const ContactForm = () => {
           <Button
             type="submit"
             className="justify-center flex items-center gap-2"
+            disabled={loading}
           >
-            Send
-            <GrSend />
+            {loading ? (
+              <>
+                Sending...
+                <LuLoader2 className="animate-spin w-4 h-4" />
+              </>
+            ) : (
+              <>
+                Send
+                <GrSend />
+              </>
+            )}
           </Button>
-          {success && (
-            <p className="text-green-500 mt-4">Email sent successfully!</p>
-          )}
-          {error && (
-            <p className="text-red-500 mt-4">
-              There was an error sending the email.
-            </p>
-          )}
         </form>
       </div>
     </div>

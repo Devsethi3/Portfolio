@@ -105,7 +105,8 @@ body {
   /* background-color: #7c3aed; */
 }
 
-::-webkit-scrollbar {
+html,
+body::-webkit-scrollbar {
   display: none;
 }
 

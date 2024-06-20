@@ -10,7 +10,9 @@ const Navbar = () => {
     <div>
       <div className="border-b dark:bg-[#030014] bg-white sticky top-0 z-40">
         <div className="container flex items-center h-[10vh] justify-between">
-          <Image src="/logo.svg" alt="logo" width={40} height={40} />
+          <Link href="/">
+            <Image src="/logo.svg" alt="logo" width={40} height={40} />
+          </Link>
           <div className="nav-menu flex items-center gap-16">
             <Link href="/">Home</Link>
             <Link href="/projects">Explore Projects</Link>

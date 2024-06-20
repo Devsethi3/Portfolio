@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import Navbar from "@/components/Navbar";
 import NextTopLoader from "nextjs-toploader";
+import ToasterContext from "@/context/ToastContext";
 
 const font = Kurale({ subsets: ["latin"], weight: ["400"] });
 
@@ -37,6 +38,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <ToasterContext />
           <Navbar />
           {children}
         </ThemeProvider>
