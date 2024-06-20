@@ -20,7 +20,7 @@ const Contact = () => {
           <h2 className="text-4xl text-center font-bold">
             Ready to Work Together?
           </h2>
-          <p className="text-lg text-center mt-2 mb-8">
+          <p className="text-lg text-center mt-2">
             Got a question or interested in collaborating with us? We're here to
             help! <br /> Simply fill out the form below or drop us an email.
           </p>

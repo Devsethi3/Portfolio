@@ -36,7 +36,7 @@ const ContactForm = () => {
       );
   };
   return (
-    <div className="">
+    <div className="py-10">
       <div className="rounded-lg border shadow-2xl shadow-indigo-600/50 border-gray-200 bg-white px-6 pt-12 pb-6 dark:border-gray-800 dark:bg-gray-950">
         <form ref={formRef} onSubmit={sendEmail} className="grid gap-4">
           <div className="grid grid-cols-2 gap-4">
