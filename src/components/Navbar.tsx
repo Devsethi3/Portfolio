@@ -19,7 +19,9 @@ const Navbar = () => {
           <div className="flex items-center gap-4 md:gap-8 lg:gap-16">
             <ThemeSwitcher />
             <div className="flex items-center gap-4">
-              <Button variant="secondary">Say Hello 👋</Button>
+              <Link href="/contact">
+                <Button variant="secondary">Say Hello 👋</Button>
+              </Link>
               <div className="block md:hidden">
                 <Button variant="secondary" size="icon">
                   <HiMenu size={20} />
