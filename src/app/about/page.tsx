@@ -328,6 +328,17 @@ const AboutPage = () => {
           Development
         </span>
         <div className="flex flex-wrap items-center gap-5 my-10">
+          <div
+            className="w-[30%]
+          blur-[120px]
+          rounded-full
+          h-32
+          absolute
+          bg-brand-primaryPurple/50
+          -z-10
+          top-22
+        "
+          />
           {developement.map((dev) => (
             <div className="relative w-12 h-12 lg:w-20 lg:h-20" key={dev.id}>
               <Image
@@ -343,6 +354,17 @@ const AboutPage = () => {
           Tools
         </span>
         <div className="flex flex-wrap items-center gap-5 my-10">
+          <div
+            className="w-[30%]
+          blur-[120px]
+          rounded-full
+          h-32
+          absolute
+          bg-brand-primaryPurple/50
+          -z-10
+          top-22
+        "
+          />
           {tools.map((tool) => (
             <div className="relative w-12 h-12 lg:w-20 lg:h-20" key={tool.id}>
               <Image

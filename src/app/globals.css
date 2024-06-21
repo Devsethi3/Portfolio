@@ -15,6 +15,10 @@ body {
   font-family: "Kurale", sans-serif;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 *::selection {
   background: #6e00ff;
   color: #fff;

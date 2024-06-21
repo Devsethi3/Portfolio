@@ -22,7 +22,7 @@ const ContactsPage = () => {
   return (
     <>
       <div>
-        <section className="w-full h-[90vh] grid grid-cols-1 lg:grid-cols-2 py-12 lg:py-20 container">
+        <section className="w-full gap-16 h-[90vh] grid grid-cols-1 lg:grid-cols-2 py-12 lg:py-20 container">
           <div className="flex flex-col justify-center items-center">
             <Image
               src="/stars.png"
@@ -38,13 +38,12 @@ const ContactsPage = () => {
                 <FlipWords words={words} />
               </span>
               <br />
-              websites with Dev Prasad Sethi
+              websites with Me
             </div>
             <p className="max-w-lg text-center text-base lg:text-xl text-neutral-500 dark:text-neutral-300 mt-4">
               If you are looking to create stunning and efficient web
               experiences, reach out to me. Whether it's a personal project, a
-              business website, or a complex web application, I'm here to help
-              bring your vision to life.
+              business website, or a complex web application.
             </p>
             <div className="flex mx-auto max-w-[500px] text-center mt-5 flex-col gap-4">
               <Link
