@@ -168,6 +168,10 @@ const Projects = () => {
 
   return (
     <section className="scroll-section-outer project-section">
+      <h2 className="text-4xl dark:text-white/90 text-black/90 font-bold container -mb-10 mt-5">
+        Here are a few of my favourite{" "}
+        <span className="text-emerald-500 underline">projects.</span>
+      </h2>
       <div
         className="w-[30%]
           blur-[120px]
