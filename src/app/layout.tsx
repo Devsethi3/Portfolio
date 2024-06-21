@@ -10,7 +10,7 @@ const font = Kurale({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata: Metadata = {
   title: "Dev Prasad Sethi",
-  description: "Portfolio of a web developer dev parasad sethi",
+  description: "Portfolio of a web developer",
 };
 
 export default function RootLayout({
