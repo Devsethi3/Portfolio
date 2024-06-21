@@ -186,7 +186,10 @@ const Hero = () => {
               Let's collaborate!
               <div className="highlight absolute top-0 left-[11.5rem] -z-10 bg-primary h-full w-0"></div>
               <span className="hero-text p-3 rounded-md">
-                Hi, I'm <span className="px-2 rounded-lg text-white bg-emerald-400 -z-10">Dev Sethi</span>
+                Hi, I'm{" "}
+                <span className="px-2 rounded-lg text-white bg-emerald-400 -z-10">
+                  Dev Sethi
+                </span>
               </span>{" "}
             </h1>
             <h1 className="home-text home-text2 dark:text-white/90">

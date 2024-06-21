@@ -24,6 +24,7 @@ const Navbar = () => {
               <Link href="/contact">
                 <Button variant="secondary">Say Hello 👋</Button>
               </Link>
+              
               <div className="block md:hidden">
                 <Button variant="secondary" size="icon">
                   <HiMenu size={20} />
