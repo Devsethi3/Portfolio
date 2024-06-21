@@ -12,7 +12,7 @@ body {
 }
 
 /* Button */
-.btn {
+/* .btn {
   border: none;
   border-radius: 10px;
   padding: 12px;
@@ -51,7 +51,7 @@ body {
 .btn:hover .sparkle {
   fill: white;
   transform: scale(1.2);
-}
+} */
 
 * {
   font-family: "Kurale", sans-serif;
