@@ -11,8 +11,10 @@ const Navbar = () => {
     <div>
       <div className="border-b dark:bg-[#030014] bg-white sticky top-0 z-40">
         <div className="container flex items-center h-[10vh] justify-between">
-          <Link href="/">
+          <Link href="/" className="relative flex items-center gap-10">
             <Image src="/logo.svg" alt="logo" width={40} height={40} />
+            <div className="absolute h-full w-[2px] left-[25%] bg-black dark:bg-white/40 hidden md:block"></div>
+            <p className="text-xl hidden md:block">Dev Prasad Sethi</p>
           </Link>
           <div className="nav-menu flex items-center gap-16">
             <Link href="/">Home</Link>
@@ -27,7 +29,7 @@ const Navbar = () => {
                 target="_blank"
                 className=""
               >
-                <FaGithub size={30} className="text-white/90" />
+                <FaGithub size={30} className="dark:text-white/90 text-black" />
               </Link>
               <Link
                 href="mailto:work.devsethi@gmail.com"
