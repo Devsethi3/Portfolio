@@ -91,6 +91,15 @@ const Hero = () => {
     );
   }, []);
 
+  const handleDownloadResume = () => {
+    const link = document.createElement("a");
+    link.href = "/resume.pdf";
+    link.download = "Dev_Prasad_Sethi_Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   // useEffect(() => {
   //   const main = document.querySelector(".main") as HTMLElement | null;
   //   const crsr = document.querySelector(".cursor") as HTMLElement | null;
@@ -227,7 +236,9 @@ const Hero = () => {
                 position="right"
               />
             </Link>
-            <Button size="lg">Resume 🚀</Button>
+            <Button size="lg" onClick={handleDownloadResume}>
+              Download Resume 🚀
+            </Button>
           </div>
         </div>
       </section>
