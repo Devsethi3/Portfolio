@@ -6,6 +6,8 @@ import MagicButton from "./MagicButton";
 import { FaLocationArrow } from "react-icons/fa6";
 import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
+import Link from "next/link";
+import { Button } from "./ui/button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -114,18 +116,29 @@ const Hero = () => {
   // }, []);
 
   return (
-    <div className="main relative">
+    <div className="">
       {/* <div className="cursor fixed transition duration-400 pointer-events-none ease-in-out -translate-x-1/2 -translate-y-1/2 transform bg-white w-10 h-10 mix-blend-difference rounded-full"></div> */}
+
       <div className="relative -z-10 top-[30%]">
         <div className="absolute w-full h-[90vh] inset-0 bg-[url('/herobg.webp')] dark:opacity-40 opacity-0 bg-cover"></div>
         {/* <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black opacity-75"></div> */}
       </div>
-
-      <section className="h-[90vh] hero w-full dark:bg-grid-white/[0.05] bg-grid-black/[0.05] z-[-10] relative flex items-center justify-center">
+      <section className="h-[90vh] hero w-full relative flex items-center justify-center">
         {/* // Radial gradient for the container to give a faded look */}
         {/* <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-[#030014] bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div> */}
 
-        <div className="flex mt-[-3rem] items-center flex-col z-[-10] gap-8">
+        <div className="flex mt-[-3rem] items-center flex-col gap-8">
+          <div
+            className="w-[30%]
+          blur-[120px]
+          rounded-full
+          h-32
+          absolute
+          bg-brand-primaryPurple/20
+          -z-10
+          top-22
+        "
+          />
           <article
             className="rounded-full
           p-[1.5px]
@@ -163,17 +176,6 @@ const Hero = () => {
               alt="b4"
               className="absolute hidden md:block hero-code-1 top-[0%] left-[0%] -z-10 "
             />
-            <div
-              className="bottom-0
-            top-[50%]
-            bg-gradient-to-t
-            dark:from-background
-            left-0
-            right-0
-            absolute
-            z-10
-          "
-            ></div>
           </div>
 
           <p className="text-xl lg:text-2xl text-center font-normal mb-5">
@@ -217,24 +219,16 @@ const Hero = () => {
           <h4 className="text-xl text-center font-medium">
             Hi! I&apos;m Dev Sethi, a Next.js Developer based in India.
           </h4>
-          <div
-            className="w-full
-          blur-[120px]
-          rounded-full
-          h-32
-          absolute
-          bg-brand-primaryPurple/30
-          top-56
-        "
-          />
-          <a href="#about" className="z-10">
-            <MagicButton
-              title="See my work"
-              icon={<FaLocationArrow />}
-              position="right"
-            />
-          </a>
-          {/* <Button>See My Work {"  "}🚀</Button> */}
+          <div className="flex items-center gap-8">
+            <Link href="/">
+              <MagicButton
+                title="Let's Talk"
+                icon={<FaLocationArrow />}
+                position="right"
+              />
+            </Link>
+            <Button size="lg">Resume 🚀</Button>
+          </div>
         </div>
       </section>
     </div>
