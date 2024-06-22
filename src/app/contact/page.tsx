@@ -56,7 +56,7 @@ const ContactsPage = () => {
               </Link>
               <Link
                 href="mailto:work.devsethi@gmail.com"
-                className="flex items-center py-2 bg-secondary mx-auto px-3 rounded-lg gap-4  hover:underline transition-colors"
+                className="flex items-center py-2 bg-secondary mx-auto px-3 rounded-lg gap-4 hover:underline transition-colors"
               >
                 <Image src="/gmail.png" width={30} height={30} alt="gmail" />
                 <span className="text-lg">work.devsethi@gmail.com</span>

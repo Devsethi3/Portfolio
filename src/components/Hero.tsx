@@ -8,6 +8,7 @@ import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import { MdOutlineFileDownload } from "react-icons/md";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -228,7 +229,7 @@ const Hero = () => {
           <h4 className="text-xl text-center font-medium">
             Hi! I&apos;m Dev Sethi, a Next.js Developer based in India.
           </h4>
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-5 lg:gap-8">
             <Link href="/">
               <MagicButton
                 title="Let's Talk"
@@ -237,7 +238,8 @@ const Hero = () => {
               />
             </Link>
             <Button size="lg" onClick={handleDownloadResume}>
-              Download Resume 🚀
+              Resume
+              <MdOutlineFileDownload className="ml-2" />
             </Button>
           </div>
         </div>

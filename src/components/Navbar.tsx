@@ -4,6 +4,7 @@ import React from "react";
 import { Button } from "./ui/button";
 import ThemeSwitcher from "./ThemeSwitcher";
 import { HiMenu } from "react-icons/hi";
+import { FaGithub } from "react-icons/fa6";
 
 const Navbar = () => {
   return (
@@ -20,11 +21,27 @@ const Navbar = () => {
           </div>
           <div className="flex items-center gap-4 md:gap-8 lg:gap-16">
             <ThemeSwitcher />
+            <div className="flex items-center gap-6">
+              <Link
+                href="https://github.com/Devsethi3"
+                target="_blank"
+                className=""
+              >
+                <FaGithub size={30} className="text-white/90" />
+              </Link>
+              <Link
+                href="mailto:work.devsethi@gmail.com"
+                className="hidden md:block"
+              >
+                <Image src="/gmail.png" width={30} height={30} alt="gmail" />
+              </Link>
+            </div>
+
             <div className="flex items-center gap-4">
               <Link href="/contact">
                 <Button variant="secondary">Say Hello 👋</Button>
               </Link>
-              
+
               <div className="block md:hidden">
                 <Button variant="secondary" size="icon">
                   <HiMenu size={20} />

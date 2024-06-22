@@ -9,7 +9,7 @@ import ToasterContext from "@/context/ToastContext";
 const font = Kurale({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata: Metadata = {
-  title: "Dev Prasad Sethi",
+  title: "Dev Prasad Sethi | Portfolio",
   description: "Portfolio of a web developer",
 };
 
