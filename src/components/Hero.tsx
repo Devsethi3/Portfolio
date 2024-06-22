@@ -168,7 +168,7 @@ const Hero = () => {
             </div>
           </article>
 
-          <div className="absolute hero-object top-[5%] right-[10%]">
+          <div className="absolute hero-object opacity-30 lg:opacity-100 top-[5%] right-[10%]">
             <Image
               src="/cude-illustration.webp"
               width={100}
@@ -208,7 +208,7 @@ const Hero = () => {
               A Next.js developer based in India
             </h1>
           </div>
-          <div className="absolute hero-object bottom-[25%] left-[10%]">
+          <div className="absolute hero-object opacity-30 lg:opacity-100 bottom-[25%] left-[10%]">
             <Image
               src="/triangle-illustration.webp"
               width={100}
