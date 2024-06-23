@@ -10,179 +10,92 @@ const TextEffect: React.FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
     const mm = gsap.matchMedia();
 
-    mm.add(
-      {
-        isDesktop: "(min-width: 1024px)",
-        isTablet: "(min-width: 768px) and (max-width: 1023px)",
-        isMobile: "(max-width: 767px)",
-      },
-      (context) => {
-        const { isDesktop, isTablet, isMobile } = context.conditions;
+    mm.add("(min-width: 0px)", () => {
+      // Text effect animation
+      const textTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: container,
+          start: "top 80%",
+          end: "bottom 20%",
+          scrub: true,
+        },
+      });
 
-        let tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: ".text-effect-hero",
-            start: "-5% 50%",
-            end: "100% 50%",
-            scrub: 1,
+      textTl.to(".text-hover", {
+        width: "100%",
+        ease: "none",
+      });
+
+      // Image animation (kept as is)
+      const imageTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: container,
+          start: "top 80%",
+          end: "bottom 20%",
+          scrub: 1,
+        },
+      });
+
+      const images = container.querySelectorAll(".sample-image");
+      images.forEach((img, index) => {
+        imageTl.to(
+          img,
+          {
+            top: "50%",
+            left: `${(index + 1) * 20 - 10}%`,
+            xPercent: -50,
+            yPercent: -50,
+            rotate: 0,
+            scale: 1,
+            opacity: 1,
+            duration: 1,
           },
-        });
+          "start"
+        );
+      });
 
-        tl.to(".text-hover", {
-          width: "100%",
-        });
+      return () => {
+        textTl.kill();
+        imageTl.kill();
+      };
+    });
 
-        let tl1 = gsap.timeline({
-          scrollTrigger: {
-            trigger: ".text-effect-hero",
-            start: "-5% 50%",
-            end: "80% 50%",
-            scrub: 1,
-          },
-        });
-
-        if (isDesktop) {
-          tl1.to(
-            ".sample-1",
-            { top: 220, rotate: 0, scale: 1.25, opacity: 1, left: "2%" },
-            "a"
-          );
-          tl1.to(
-            ".sample-2",
-            { top: 220, rotate: 0, scale: 1.25, opacity: 1, left: "22%" },
-            "a"
-          );
-          tl1.to(
-            ".sample-3",
-            { top: 220, rotate: 0, scale: 1.25, opacity: 1, right: "43%" },
-            "a"
-          );
-          tl1.to(
-            ".sample-4",
-            { top: 220, rotate: 0, scale: 1.25, opacity: 1, right: "23%" },
-            "a"
-          );
-          tl1.to(
-            ".sample-5",
-            { top: 220, rotate: 0, scale: 1.25, opacity: 1, right: "3%" },
-            "a"
-          );
-        } else if (isTablet) {
-          tl1.to(
-            ".sample-1",
-            { top: 180, rotate: 0, scale: 1.15, opacity: 1, left: "5%" },
-            "a"
-          );
-          tl1.to(
-            ".sample-2",
-            { top: 180, rotate: 0, scale: 1.15, opacity: 1, left: "25%" },
-            "a"
-          );
-          tl1.to(
-            ".sample-3",
-            { top: 180, rotate: 0, scale: 1.15, opacity: 1, right: "45%" },
-            "a"
-          );
-          tl1.to(
-            ".sample-4",
-            { top: 180, rotate: 0, scale: 1.15, opacity: 1, right: "25%" },
-            "a"
-          );
-          tl1.to(
-            ".sample-5",
-            { top: 180, rotate: 0, scale: 1.15, opacity: 1, right: "5%" },
-            "a"
-          );
-        } else if (isMobile) {
-          tl1.to(
-            ".sample-1",
-            { top: 150, rotate: 0, scale: 1.1, opacity: 1, left: "5%" },
-            "a"
-          );
-          tl1.to(
-            ".sample-2",
-            { top: 150, rotate: 0, scale: 1.1, opacity: 1, left: "25%" },
-            "a"
-          );
-          tl1.to(
-            ".sample-3",
-            { top: 150, rotate: 0, scale: 1.1, opacity: 1, right: "45%" },
-            "a"
-          );
-          tl1.to(
-            ".sample-4",
-            { top: 150, rotate: 0, scale: 1.1, opacity: 1, right: "25%" },
-            "a"
-          );
-          tl1.to(
-            ".sample-5",
-            { top: 150, rotate: 0, scale: 1.1, opacity: 1, right: "5%" },
-            "a"
-          );
-        }
-
-        return () => {
-          // Clean up if needed
-        };
-      }
-    );
-
-    return () => {
-      mm.revert();
-    };
+    return () => mm.revert();
   }, []);
 
   return (
     <div
       ref={containerRef}
-      className="h-screen text-effect-hero w-full container"
+      className="min-h-screen text-effect-hero w-full container relative overflow-hidden"
     >
-      <h2 className="text-3xl lg:text-7xl mt-[8rem] absolute opacity-20 overflow-hidden font-extrabold">
-        Elevate your online presence with cutting{" "}
-        <br className="hidden lg:inline" /> areas for improvement.
-      </h2>
-      <h2 className="text-3xl lg:text-7xl mt-[8rem] w-[0%] text-hover absolute overflow-hidden opacity-100 whitespace-nowrap font-extrabold">
-        Elevate your online presence with cutting{" "}
-        <br className="hidden lg:inline" /> areas for improvement.
-      </h2>
-      <div className="relative top-[20%] -z-10">
-        <Image
-          src="/showcase-1.webp"
-          width={200}
-          height={200}
-          alt="sample"
-          className="rounded-md opacity-0 sample-1 absolute top-0 left-0 -rotate-12"
-        />
-        <Image
-          src="/showcase-2.webp"
-          width={200}
-          height={200}
-          alt="sample"
-          className="rounded-md opacity-0 sample-2 absolute top-10 left-[20%] rotate-12"
-        />
-        <Image
-          src="/showcase-3.webp"
-          width={200}
-          height={200}
-          alt="sample"
-          className="rounded-md opacity-0 sample-3 absolute top-24 right-[25%] rotate-12"
-        />
-        <Image
-          src="/showcase-4.webp"
-          width={200}
-          height={200}
-          alt="sample"
-          className="rounded-md opacity-0 sample-4 absolute top-10 right-[10%] -rotate-12"
-        />
-        <Image
-          src="/showcase-5.webp"
-          width={200}
-          height={200}
-          alt="sample"
-          className="rounded-md opacity-0 sample-5 absolute top-0 right-0 rotate-12"
-        />
+      <div className="relative mt-[8rem] h-[200px] md:h-[300px] lg:h-[400px] overflow-hidden">
+        <h2 className="text-3xl md:text-5xl lg:text-7xl absolute top-0 left-0 w-full opacity-20 font-extrabold leading-tight">
+          Elevate your online presence with
+          <br className="hidden sm:inline" /> cutting areas for improvement.
+        </h2>
+        <h2 className="text-3xl md:text-5xl lg:text-7xl absolute top-0 left-0 w-[0%] text-hover overflow-hidden opacity-100 whitespace-nowrap font-extrabold leading-tight">
+          Elevate your online presence with
+          <br className="hidden sm:inline" /> cutting areas for improvement.
+        </h2>
+      </div>
+      <div className="absolute inset-0 -z-10">
+        {[1, 2, 3, 4, 5].map((num) => (
+          <Image
+            key={num}
+            src={`/showcase-${num}.webp`}
+            width={200}
+            height={200}
+            alt={`sample ${num}`}
+            className={`rounded-md opacity-0 sample-image absolute top-full left-1/2 -translate-x-1/2 rotate-${
+              num % 2 === 0 ? "12" : "-12"
+            }`}
+          />
+        ))}
       </div>
     </div>
   );
