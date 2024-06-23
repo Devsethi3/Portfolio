@@ -1,31 +1,29 @@
 "use client";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const TextEffect = () => {
+const TextEffect: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
   useEffect(() => {
     const mm = gsap.matchMedia();
 
     mm.add(
       {
         isDesktop: "(min-width: 1024px)",
-        isMobile: "(max-width: 1023px)",
+        isTablet: "(min-width: 768px) and (max-width: 1023px)",
+        isMobile: "(max-width: 767px)",
       },
       (context) => {
-        const conditions = context.conditions as {
-          isDesktop: boolean;
-          isMobile: boolean;
-        };
-        const { isDesktop, isMobile } = conditions;
+        const { isDesktop, isTablet, isMobile } = context.conditions;
 
         let tl = gsap.timeline({
           scrollTrigger: {
             trigger: ".text-effect-hero",
-            // markers: true,
             start: "-5% 50%",
             end: "100% 50%",
             scrub: 1,
@@ -39,7 +37,6 @@ const TextEffect = () => {
         let tl1 = gsap.timeline({
           scrollTrigger: {
             trigger: ".text-effect-hero",
-            // markers: true,
             start: "-5% 50%",
             end: "80% 50%",
             scrub: 1,
@@ -49,119 +46,85 @@ const TextEffect = () => {
         if (isDesktop) {
           tl1.to(
             ".sample-1",
-            {
-              top: 220,
-              rotate: 0,
-              scale: 1.25,
-              opacity: 1,
-              left: "2%",
-            },
+            { top: 220, rotate: 0, scale: 1.25, opacity: 1, left: "2%" },
             "a"
           );
           tl1.to(
             ".sample-2",
-            {
-              top: 220,
-              rotate: 0,
-              scale: 1.25,
-              opacity: 1,
-              left: "22%",
-            },
+            { top: 220, rotate: 0, scale: 1.25, opacity: 1, left: "22%" },
             "a"
           );
           tl1.to(
             ".sample-3",
-            {
-              top: 220,
-              rotate: 0,
-              scale: 1.25,
-              opacity: 1,
-              right: "43%",
-            },
+            { top: 220, rotate: 0, scale: 1.25, opacity: 1, right: "43%" },
             "a"
           );
           tl1.to(
             ".sample-4",
-            {
-              top: 220,
-              rotate: 0,
-              scale: 1.25,
-              opacity: 1,
-              right: "23%",
-            },
+            { top: 220, rotate: 0, scale: 1.25, opacity: 1, right: "23%" },
             "a"
           );
           tl1.to(
             ".sample-5",
-            {
-              top: 220,
-              rotate: 0,
-              scale: 1.25,
-              opacity: 1,
-              right: "3%",
-            },
+            { top: 220, rotate: 0, scale: 1.25, opacity: 1, right: "3%" },
+            "a"
+          );
+        } else if (isTablet) {
+          tl1.to(
+            ".sample-1",
+            { top: 180, rotate: 0, scale: 1.15, opacity: 1, left: "5%" },
+            "a"
+          );
+          tl1.to(
+            ".sample-2",
+            { top: 180, rotate: 0, scale: 1.15, opacity: 1, left: "25%" },
+            "a"
+          );
+          tl1.to(
+            ".sample-3",
+            { top: 180, rotate: 0, scale: 1.15, opacity: 1, right: "45%" },
+            "a"
+          );
+          tl1.to(
+            ".sample-4",
+            { top: 180, rotate: 0, scale: 1.15, opacity: 1, right: "25%" },
+            "a"
+          );
+          tl1.to(
+            ".sample-5",
+            { top: 180, rotate: 0, scale: 1.15, opacity: 1, right: "5%" },
             "a"
           );
         } else if (isMobile) {
           tl1.to(
             ".sample-1",
-            {
-              top: 150,
-              rotate: 0,
-              scale: 1.1,
-              opacity: 1,
-              left: "5%",
-            },
+            { top: 150, rotate: 0, scale: 1.1, opacity: 1, left: "5%" },
             "a"
           );
           tl1.to(
             ".sample-2",
-            {
-              top: 150,
-              rotate: 0,
-              scale: 1.1,
-              opacity: 1,
-              left: "25%",
-            },
+            { top: 150, rotate: 0, scale: 1.1, opacity: 1, left: "25%" },
             "a"
           );
           tl1.to(
             ".sample-3",
-            {
-              top: 150,
-              rotate: 0,
-              scale: 1.1,
-              opacity: 1,
-              right: "45%",
-            },
+            { top: 150, rotate: 0, scale: 1.1, opacity: 1, right: "45%" },
             "a"
           );
           tl1.to(
             ".sample-4",
-            {
-              top: 150,
-              rotate: 0,
-              scale: 1.1,
-              opacity: 1,
-              right: "25%",
-            },
+            { top: 150, rotate: 0, scale: 1.1, opacity: 1, right: "25%" },
             "a"
           );
           tl1.to(
             ".sample-5",
-            {
-              top: 150,
-              rotate: 0,
-              scale: 1.1,
-              opacity: 1,
-              right: "5%",
-            },
+            { top: 150, rotate: 0, scale: 1.1, opacity: 1, right: "5%" },
             "a"
           );
         }
 
         return () => {
-          // context.revert();
+          // Clean up if needed
         };
       }
     );
@@ -172,55 +135,56 @@ const TextEffect = () => {
   }, []);
 
   return (
-    <>
-      <div className="h-screen text-effect-hero w-full container">
-        <h2 className="text-3xl lg:text-7xl mt-[8rem] absolute opacity-20 overflow-hidden font-extrabold">
-          Elevate your online presence with cutting <br /> areas for
-          improvement.
-        </h2>
-        <h2 className="text-3xl lg:text-7xl mt-[8rem] w-[0%] text-hover absolute overflow-hidden opacity-100 whitespace-nowrap font-extrabold">
-          Elevate your online presence with cutting <br /> areas for
-          improvement.
-        </h2>
-        <div className="relative top-[20%] -z-10">
-          <Image
-            src="/showcase-1.webp"
-            width={200}
-            height={200}
-            alt="sample"
-            className="rounded-md opacity-0 sample-1 absolute top-0 left-0 -rotate-12"
-          />
-          <Image
-            src="/showcase-2.webp"
-            width={200}
-            height={200}
-            alt="sample"
-            className="rounded-md opacity-0 sample-2 absolute top-10 left-[20%] rotate-12"
-          />
-          <Image
-            src="/showcase-3.webp"
-            width={200}
-            height={200}
-            alt="sample"
-            className="rounded-md opacity-0 sample-3 absolute top-24 right-[25%] rotate-12"
-          />
-          <Image
-            src="/showcase-4.webp"
-            width={200}
-            height={200}
-            alt="sample"
-            className="rounded-md opacity-0 sample-4 absolute top-10 right-[10%] -rotate-12"
-          />
-          <Image
-            src="/showcase-5.webp"
-            width={200}
-            height={200}
-            alt="sample"
-            className="rounded-md opacity-0 sample-5 absolute top-0 right-0 rotate-12"
-          />
-        </div>
+    <div
+      ref={containerRef}
+      className="h-screen text-effect-hero w-full container"
+    >
+      <h2 className="text-3xl lg:text-7xl mt-[8rem] absolute opacity-20 overflow-hidden font-extrabold">
+        Elevate your online presence with cutting{" "}
+        <br className="hidden lg:inline" /> areas for improvement.
+      </h2>
+      <h2 className="text-3xl lg:text-7xl mt-[8rem] w-[0%] text-hover absolute overflow-hidden opacity-100 whitespace-nowrap font-extrabold">
+        Elevate your online presence with cutting{" "}
+        <br className="hidden lg:inline" /> areas for improvement.
+      </h2>
+      <div className="relative top-[20%] -z-10">
+        <Image
+          src="/showcase-1.webp"
+          width={200}
+          height={200}
+          alt="sample"
+          className="rounded-md opacity-0 sample-1 absolute top-0 left-0 -rotate-12"
+        />
+        <Image
+          src="/showcase-2.webp"
+          width={200}
+          height={200}
+          alt="sample"
+          className="rounded-md opacity-0 sample-2 absolute top-10 left-[20%] rotate-12"
+        />
+        <Image
+          src="/showcase-3.webp"
+          width={200}
+          height={200}
+          alt="sample"
+          className="rounded-md opacity-0 sample-3 absolute top-24 right-[25%] rotate-12"
+        />
+        <Image
+          src="/showcase-4.webp"
+          width={200}
+          height={200}
+          alt="sample"
+          className="rounded-md opacity-0 sample-4 absolute top-10 right-[10%] -rotate-12"
+        />
+        <Image
+          src="/showcase-5.webp"
+          width={200}
+          height={200}
+          alt="sample"
+          className="rounded-md opacity-0 sample-5 absolute top-0 right-0 rotate-12"
+        />
       </div>
-    </>
+    </div>
   );
 };
 
