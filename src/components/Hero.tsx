@@ -195,10 +195,10 @@ const Hero = () => {
 
           <div className="max-w-6xl text-center mt-[-2rem] xl:text-[3.95rem] text-4xl leading-[1] font-extrabold">
             <h1 className="home-text z-10 home-text1 relative dark:text-white/90 mb-4">
-              Let's collaborate!
+              Let&apos;s collaborate!
               <div className="highlight absolute top-0 left-[11.5rem] -z-10 bg-primary h-full w-0"></div>
               <span className="hero-text p-3 rounded-md">
-                Hi, I'm{" "}
+                Hi, I&apos;m{" "}
                 <span className="px-2 rounded-lg text-emerald-500 underline -z-10">
                   Dev Sethi
                 </span>

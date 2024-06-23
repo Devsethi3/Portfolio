@@ -12,6 +12,10 @@ import { MdOutlineClose } from "react-icons/md";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  window.addEventListener("scroll", () => {
+    setIsOpen(false);
+  });
+
   return (
     <div>
       <div className="border-b dark:bg-[#030014] bg-white sticky top-0 z-40">
@@ -33,13 +37,25 @@ const Navbar = () => {
                 className="bg-white nav-close font-extrabold text-gray-700 p-2 rounded-lg"
               />
             </div>
-            <Link className="nav-link" href="/">
+            <Link
+              className="nav-link"
+              href="/"
+              onClick={() => setIsOpen(false)}
+            >
               Home
             </Link>
-            <Link className="nav-link" href="/projects">
+            <Link
+              className="nav-link"
+              href="/projects"
+              onClick={() => setIsOpen(false)}
+            >
               Explore Projects
             </Link>
-            <Link className="nav-link" href="/about">
+            <Link
+              className="nav-link"
+              href="/about"
+              onClick={() => setIsOpen(false)}
+            >
               About
             </Link>
           </div>

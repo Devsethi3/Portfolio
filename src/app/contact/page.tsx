@@ -42,8 +42,8 @@ const ContactsPage = () => {
             </div>
             <p className="max-w-lg text-center text-base lg:text-xl text-neutral-500 dark:text-neutral-300 mt-4">
               If you are looking to create stunning and efficient web
-              experiences, reach out to me. Whether it's a personal project, a
-              business website, or a complex web application.
+              experiences, reach out to me. Whether it&apos;s a personal
+              project, a business website, or a complex web application.
             </p>
             <div className="flex mx-auto max-w-[500px] text-center mt-5 flex-col gap-4">
               <Link

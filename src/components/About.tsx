@@ -70,7 +70,7 @@ const About = () => {
           Why Choose Me !
         </h2>
         <p className="text-sm lg:text-lg py-8 about-title max-w-[50rem] lg:max-w-2xl leading-tight">
-          I build websites for your needs. Whether you're a business,
+          I build websites for your needs. Whether you&apos;re a business,
           organization or an individual looking for a website. In the age of
           information technology.
         </p>

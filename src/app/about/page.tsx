@@ -275,8 +275,8 @@ const AboutPage = () => {
         <p className="text-2xl md:text-3xl lg:text-5xl text-center mb-12 font-bold">
           I am Dev Prasad Sethi, a seasoned Full Stack Next.js Developer based
           in India, specializing in crafting high-performance, SEO-optimized web
-          applications. Leveraging Next.js's cutting-edge capabilities, I have
-          consistently delivered exceptional results :
+          applications. Leveraging Next.js&apos;s cutting-edge capabilities, I
+          have consistently delivered exceptional results:
         </p>
         <div
           className="w-[30%]
@@ -369,7 +369,8 @@ const AboutPage = () => {
 
       <section className="container py-10">
         <h2 className="text-4xl md:text-6xl lg:text-8xl mb-10 font-extrabold">
-          Things I'm <span className="text-emerald-500 underline">good</span> at
+          Things I&apos;m{" "}
+          <span className="text-emerald-500 underline">good</span> at
         </h2>
         <span className="text-base lg:text-xl px-3 lg:px-4 py-2 border-2 dark:border-gray-400 border-gray-200 bg-secondary rounded-lg">
           Development
