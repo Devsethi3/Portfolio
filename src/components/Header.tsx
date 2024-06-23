@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
@@ -9,22 +10,21 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { MdOutlineClose } from "react-icons/md";
 import { HiMenu } from "react-icons/hi";
+import { Button } from "./ui/button";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMenu, setIsMenu] = useState(false);
 
-  const router = useRouter();
-
   return (
-    <div className="border-b-2 shadow-lg z-40 sticky top-0">
+    <div className="border-b-2 shadow-lg">
       <header className="container">
         <div className="backdrop-blur-sm">
           <div className="flex h-[4.5rem] items-center justify-between">
             <Link href="/" className="flex items-center gap-2">
               <Image src="/logo.svg" alt="logo" width={50} height={50} />
               <p className="text-2xl md:text-3xl lg:text-3xl font-extrabold pl-4 border-l-2 pt-[.4rem] border-gray-500   logo-text">
-                Dev Prasad Sethi
+                SKETCHY
               </p>
             </Link>
             <div className={`nav-menu ${isMenu ? "show-menu" : "nav-menu"}`}>
@@ -86,6 +86,12 @@ const Header = () => {
             </div>
 
             <div className="flex items-center gap-4">
+              <div className="sm:flex sm:gap-4">
+                <Link href="/login">
+                  <Button>Login</Button>
+                </Link>
+              </div>
+
               <div className="block md:hidden">
                 <button
                   onClick={() => setIsMenu(!isMenu)}

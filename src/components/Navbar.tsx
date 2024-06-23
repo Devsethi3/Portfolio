@@ -1,12 +1,17 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "./ui/button";
 import ThemeSwitcher from "./ThemeSwitcher";
 import { HiMenu } from "react-icons/hi";
 import { FaGithub } from "react-icons/fa6";
+import { MdOutlineClose } from "react-icons/md";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div>
       <div className="border-b dark:bg-[#030014] bg-white sticky top-0 z-40">
@@ -16,10 +21,27 @@ const Navbar = () => {
             <div className="absolute h-full w-[2px] left-[25%] bg-black dark:bg-white/40 hidden md:block"></div>
             <p className="text-xl hidden md:block">Dev Prasad Sethi</p>
           </Link>
-          <div className="nav-menu flex items-center gap-16">
-            <Link href="/">Home</Link>
-            <Link href="/projects">Explore Projects</Link>
-            <Link href="/about">About</Link>
+          <div
+            className={`nav-menu flex flex-col lg:flex-row items-center gap-16 ${
+              isOpen ? "show-menu" : "nav-menu"
+            }`}
+          >
+            <div className="block md:hidden">
+              <MdOutlineClose
+                onClick={() => setIsOpen(false)}
+                size={35}
+                className="bg-white nav-close font-extrabold text-gray-700 p-2 rounded-lg"
+              />
+            </div>
+            <Link className="nav-link" href="/">
+              Home
+            </Link>
+            <Link className="nav-link" href="/projects">
+              Explore Projects
+            </Link>
+            <Link className="nav-link" href="/about">
+              About
+            </Link>
           </div>
           <div className="flex items-center gap-4 md:gap-8 lg:gap-16">
             <ThemeSwitcher />
@@ -45,7 +67,11 @@ const Navbar = () => {
               </Link>
 
               <div className="block md:hidden">
-                <Button variant="secondary" size="icon">
+                <Button
+                  variant="secondary"
+                  onClick={() => setIsOpen(true)}
+                  size="icon"
+                >
                   <HiMenu size={20} />
                 </Button>
               </div>
