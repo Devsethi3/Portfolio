@@ -273,13 +273,60 @@ const AboutPage = () => {
 
       <section className="py-10 container">
         <p className="text-2xl md:text-3xl lg:text-5xl text-center mb-12 font-bold">
-          Hi! I'm Dev Sethi, a full stack web developer and a freelance UI/UX
-          designer. I've been a part of Sheryians for 2 years and taught more
-          than 500+ students full-stack web development, As a web developer, my
-          best work is Sheryians's website which is a course-selling website
-          similar to awwwards or udemy. Along with that I've also created more
-          than 50+ websites for my clients in Bhopal.
+          I am Dev Prasad Sethi, a seasoned Full Stack Next.js Developer based
+          in India, specializing in crafting high-performance, SEO-optimized web
+          applications. Leveraging Next.js's cutting-edge capabilities, I have
+          consistently delivered exceptional results :
         </p>
+        <div
+          className="w-[30%]
+            blur-[120px]
+            rounded-full
+            h-32
+            absolute
+            bg-brand-primaryPurple/50
+            -z-10
+            top-22
+          "
+        />
+        <ul className="list-disc space-y-4 text-xl lg:text-2xl pl-5 pb-8 text-gray-800 dark:text-gray-200">
+          <li className="">
+            <span className="font-bold text-gray-900 dark:text-white">
+              Enhanced SEO strategies
+            </span>
+            <span className="ml-2 text-gray-700 dark:text-gray-300">
+              resulting in a 68% increase in organic traffic over a 6-month
+              period.
+            </span>
+          </li>
+          <li className="">
+            <span className="font-bold text-gray-900 dark:text-white">
+              Implemented responsive designs
+            </span>
+            <span className="ml-2 text-gray-700 dark:text-gray-300">
+              that improved mobile user engagement by 42%, significantly
+              reducing bounce rates.
+            </span>
+          </li>
+          <li className="">
+            <span className="font-bold text-gray-900 dark:text-white">
+              Optimized database queries
+            </span>
+            <span className="ml-2 text-gray-700 dark:text-gray-300">
+              cutting API response times by 45% and enhancing overall system
+              efficiency.
+            </span>
+          </li>
+          <li className="">
+            <span className="font-bold text-gray-900 dark:text-white">
+              Developed and integrated custom React components
+            </span>
+            <span className="ml-2 text-gray-700 dark:text-gray-300">
+              accelerating development cycles by 28%.
+            </span>
+          </li>
+        </ul>
+
         <div className="grid gap-4 text-white">
           <div className="grid grid-cols-2 gap-4">
             <div className="rounded-lg bg-indigo-600 p-4 flex flex-col items-center justify-center">
