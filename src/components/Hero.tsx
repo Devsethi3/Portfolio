@@ -4,11 +4,11 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import MagicButton from "./MagicButton";
 import { FaLocationArrow } from "react-icons/fa6";
+import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { MdOutlineFileDownload } from "react-icons/md";
-import { ScrollTrigger } from "gsap/all";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -101,33 +101,8 @@ const Hero = () => {
     document.body.removeChild(link);
   };
 
-  // useEffect(() => {
-  //   const main = document.querySelector(".main") as HTMLElement | null;
-  //   const crsr = document.querySelector(".cursor") as HTMLElement | null;
-
-  //   const mouseMove = () => {
-  //     if (main && crsr) {
-  //       main.addEventListener("mousemove", (dets: MouseEvent) => {
-  //         crsr.style.left = `${dets.clientX}px`;
-  //         crsr.style.top = `${dets.clientY}px`;
-  //         console.log(dets);
-  //       });
-  //     }
-  //   };
-
-  //   mouseMove();
-
-  //   // Cleanup event listener on component unmount
-  //   return () => {
-  //     if (main) {
-  //       main.removeEventListener("mousemove", mouseMove);
-  //     }
-  //   };
-  // }, []);
-
   return (
     <div className="">
-      {/* <div className="cursor fixed transition duration-400 pointer-events-none ease-in-out -translate-x-1/2 -translate-y-1/2 transform bg-white w-10 h-10 mix-blend-difference rounded-full"></div> */}
 
       <div className="relative -z-10 top-[30%]">
         <div className="absolute w-full h-[90vh] inset-0 bg-[url('/herobg.webp')] dark:opacity-40 opacity-0 bg-cover"></div>
