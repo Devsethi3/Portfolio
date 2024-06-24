@@ -4,11 +4,11 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import MagicButton from "./MagicButton";
 import { FaLocationArrow } from "react-icons/fa6";
-import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { MdOutlineFileDownload } from "react-icons/md";
+import { ScrollTrigger } from "gsap/all";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -226,8 +226,9 @@ const Hero = () => {
               alt="illustration"
             />
           </div>
-          <h4 className="text-xl text-center font-medium">
-            Hi! I&apos;m Dev Sethi, a Next.js Developer based in India.
+          <h4 className="text-lg lg:text-xl text-center font-medium">
+            I specialize in crafting performant, scalable, and beautiful web
+            applications that bring your vision to life.
           </h4>
           <div className="flex items-center gap-5 lg:gap-8">
             <Link href="/">
