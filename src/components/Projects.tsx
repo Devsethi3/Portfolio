@@ -101,7 +101,9 @@ const Projects = () => {
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-    if (window.innerWidth >= 768) {
+    const mm = gsap.matchMedia();
+
+    mm.add("(min-width: 768px)", () => {
       const pin = gsap.fromTo(
         sectionRef.current,
         {
@@ -115,16 +117,20 @@ const Projects = () => {
             trigger: triggerRef.current,
             start: "top top",
             end: "2000 top",
-            // markers: true,
             scrub: 0.6,
             pin: true,
           },
         }
       );
-      return () => {
-        pin.kill();
-      };
-    }
+      return () => pin.kill();
+    });
+
+    mm.add("(max-width: 767px)", () => {
+      gsap.set(sectionRef.current, { translateX: 0 });
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    });
+
+    return () => mm.revert();
   }, []);
 
   useGSAP(() => {
@@ -183,7 +189,7 @@ const Projects = () => {
           top-22
         "
       />
-      <div ref={triggerRef}>
+      <div ref={triggerRef} className="">
         <div
           ref={sectionRef}
           className="scroll-section-inner flex flex-col md:flex-row"
@@ -232,6 +238,7 @@ const Projects = () => {
                   <Image
                     src={project.image}
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     alt={`project-${index + 1}`}
                     className="rounded-lg object-cover"
                   />

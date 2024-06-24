@@ -105,14 +105,12 @@ body {
   width: 400vw;
   display: flex;
   flex-direction: row;
-  /* gap: 5rem; */
   position: relative;
 }
 
 .scroll-section {
   height: 100vh;
   width: 100vw;
-  /* background-color: #7c3aed; */
 }
 
 .about,
@@ -216,6 +214,17 @@ body {
     font-size: 1.5rem;
     color: #fff;
     border-bottom: 1px solid #ffffffc0;
+  }
+  .scroll-section-inner {
+    width: 100vw;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .scroll-section {
+    width: 100%;
+    height: auto;
+    padding: 2rem 0;
   }
 }
 

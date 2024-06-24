@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import ThemeSwitcher from "./ThemeSwitcher";
 import { HiMenu } from "react-icons/hi";
@@ -12,9 +12,17 @@ import { MdOutlineClose } from "react-icons/md";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  window.addEventListener("scroll", () => {
-    setIsOpen(false);
-  });
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsOpen(false);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div>
