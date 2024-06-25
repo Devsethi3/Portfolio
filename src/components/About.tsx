@@ -80,7 +80,7 @@ const About = () => {
           organization or an individual looking for a website. In the age of
           information technology.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-10 pt-6 about-cards">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-5 lg:gap-10 pt-6 about-cards">
           {[
             {
               number: "01",

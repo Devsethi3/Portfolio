@@ -6,7 +6,6 @@ import { BsPuzzleFill } from "react-icons/bs";
 import { FiType } from "react-icons/fi";
 import { FlipWords } from "@/components/ui/flip-words";
 import Image from "next/image";
-import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 import TechStack from "@/components/TechStack";
 import TextSlider from "@/components/TextSlider";
 
@@ -16,7 +15,7 @@ const AboutPage = () => {
   return (
     <div>
       <div>
-        <section className="w-full pt-14 md:py-24 lg:pt-32 container relative">
+        <section className="w-full pt-14 md:py-24 lg:pt-32 relative">
           <div
             className="w-[30%]
           blur-[120px]

@@ -22,7 +22,7 @@ const ContactsPage = () => {
   return (
     <>
       <div>
-        <section className="w-full gap-0 lg:gap-16 h-[90vh] grid grid-cols-1 lg:grid-cols-2 py-12 lg:py-20 container">
+        <section className="w-full gap-0 lg:gap-16 min-h-[90vh] grid grid-cols-1 lg:grid-cols-2 py-12 lg:py-20 container">
           <div className="flex flex-col justify-center items-center">
             <Image
               src="/stars.png"

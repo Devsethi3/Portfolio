@@ -216,17 +216,6 @@ body {
     color: #fff;
     border-bottom: 1px solid #ffffffc0;
   }
-  .scroll-section-inner {
-    width: 100vw;
-    flex-direction: column;
-    height: auto;
-  }
-
-  .scroll-section {
-    width: 100%;
-    height: auto;
-    padding: 2rem 0;
-  }
 }
 
 @layer base {

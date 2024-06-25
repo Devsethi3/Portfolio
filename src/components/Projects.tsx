@@ -192,12 +192,12 @@ const Projects = () => {
       <div ref={triggerRef} className="">
         <div
           ref={sectionRef}
-          className="scroll-section-inner flex flex-col md:flex-row"
+          className="scroll-section-inner flex"
         >
           {projects.map((project, index) => (
             <div
               key={index}
-              className="scroll-section py-10 justify-center items-center container gap-6 lg:gap-16 flex flex-col-reverse md:flex-row"
+              className="scroll-section py-10 justify-center items-center container gap-6 lg:gap-16 flex"
             >
               <div className="md:w-[50%] w-full">
                 <div className="relative project-text">

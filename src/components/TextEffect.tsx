@@ -47,7 +47,7 @@ const TextEffect: React.FC = () => {
           trigger: container,
           start: "top 90%",
           end: "bottom 20%",
-          markers: true,
+          // markers: true,
           scrub: 1,
         },
       });
