@@ -46,6 +46,7 @@ body {
   max-width: 1380px;
   margin-inline: auto;
   padding-inline: 0.75rem;
+  overflow: hidden;
 }
 
 .input-container {

@@ -19,8 +19,8 @@ const HomePage = () => {
       <About />
       <Grid />
       {/* <Model /> */}
-      <Projects />
-      <Contact />
+      {/* <Projects /> */}
+      {/* <Contact /> */}
     </>
   );
 };

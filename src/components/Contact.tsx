@@ -4,7 +4,7 @@ import ContactForm from "./ContactForm";
 const Contact = () => {
   return (
     <>
-      <div className="flex items-center justify-center w-full h-screen">
+      <div className="flex items-center container justify-center w-full h-screen">
         <div className="">
           <div
             className="w-[30%]
@@ -21,8 +21,9 @@ const Contact = () => {
             Ready to Work Together?
           </h2>
           <p className="text-lg text-center mt-2">
-            Got a question or interested in collaborating with us? We&apos;re here to
-            help! <br /> Simply fill out the form below or drop us an email.
+            Got a question or interested in collaborating with us? We&apos;re
+            here to help! <br /> Simply fill out the form below or drop us an
+            email.
           </p>
           <ContactForm />
         </div>

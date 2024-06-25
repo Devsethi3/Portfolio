@@ -16,27 +16,38 @@ const TextEffect: React.FC = () => {
     const mm = gsap.matchMedia();
 
     mm.add("(min-width: 0px)", () => {
-      // Text effect animation
-      const textTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: container,
-          start: "top 80%",
-          end: "bottom 20%",
-          scrub: true,
-        },
+      // Text animation
+      const textLines = container.querySelectorAll(".text-line");
+      textLines.forEach((line) => {
+        const chars = line.querySelectorAll(".char");
+        const stagger = window.innerWidth < 768 ? 0.01 : 0.02;
+
+        gsap.fromTo(
+          chars,
+          { y: 100, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.5,
+            ease: "power2.out",
+            stagger: stagger,
+            scrollTrigger: {
+              trigger: line,
+              start: "top 80%",
+              end: "bottom 20%",
+              scrub: 1,
+            },
+          }
+        );
       });
 
-      textTl.to(".text-hover", {
-        width: "100%",
-        ease: "none",
-      });
-
-      // Image animation (kept as is)
+      // Image animation
       const imageTl = gsap.timeline({
         scrollTrigger: {
           trigger: container,
-          start: "top 80%",
+          start: "top 90%",
           end: "bottom 20%",
+          markers: true,
           scrub: 1,
         },
       });
@@ -46,7 +57,7 @@ const TextEffect: React.FC = () => {
         imageTl.to(
           img,
           {
-            top: "50%",
+            top: "60%",
             left: `${(index + 1) * 20 - 10}%`,
             xPercent: -50,
             yPercent: -50,
@@ -60,9 +71,25 @@ const TextEffect: React.FC = () => {
       });
 
       return () => {
-        textTl.kill();
+        ScrollTrigger.getAll().forEach((st) => st.kill());
         imageTl.kill();
       };
+    });
+
+    // Larger screens
+    mm.add("(min-width: 768px)", () => {
+      const images = container.querySelectorAll(".sample-image");
+      images.forEach((img: any) => {
+        gsap.set(img, { width: "250px", height: "250px" });
+      });
+    });
+
+    // Smaller screens
+    mm.add("(max-width: 767px)", () => {
+      const images = container.querySelectorAll(".sample-image");
+      images.forEach((img: any) => {
+        gsap.set(img, { width: "150px", height: "150px" });
+      });
     });
 
     return () => mm.revert();
@@ -71,25 +98,34 @@ const TextEffect: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      className="min-h-screen text-effect-hero w-full container relative overflow-hidden"
+      className="min-h-screen text-effect-hero w-full container relative overflow-hidden px-4 sm:px-6 lg:px-8"
     >
-      <div className="relative mt-[8rem] h-[200px] md:h-[300px] lg:h-[400px] overflow-hidden">
-        <h2 className="text-3xl md:text-5xl lg:text-7xl absolute top-0 left-0 w-full opacity-20 font-extrabold leading-tight">
-          Elevate your online presence with
-          <br className="hidden sm:inline" /> cutting areas for improvement.
-        </h2>
-        <h2 className="text-3xl md:text-5xl lg:text-7xl absolute top-0 left-0 w-[0%] text-hover overflow-hidden opacity-100 whitespace-nowrap font-extrabold leading-tight">
-          Elevate your online presence with
-          <br className="hidden sm:inline" /> cutting areas for improvement.
+      <div className="relative mt-20 sm:mt-24 md:mt-32 lg:mt-40 overflow-hidden">
+        <h2 className="text-4xl lg:text-7xl font-extrabold leading-tight">
+          <div className="text-line">
+            {"Elevate your online presence".split("").map((char, index) => (
+              <span key={index} className="char inline-block">
+                {char === " " ? "\u00A0" : char}
+              </span>
+            ))}
+          </div>
+          <div className="text-line mt-2 sm:mt-4">
+            {"with cutting edge solutions.".split("").map((char, index) => (
+              <span key={index} className="char inline-block">
+                {char === " " ? "\u00A0" : char}
+              </span>
+            ))}
+          </div>
         </h2>
       </div>
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 top-[20%] -z-10">
         {[1, 2, 3, 4, 5].map((num) => (
           <Image
             key={num}
             src={`/showcase-${num}.webp`}
-            width={200}
-            height={200}
+            layout="intrinsic"
+            width={180}
+            height={180}
             alt={`sample ${num}`}
             className={`rounded-md opacity-0 sample-image absolute top-full left-1/2 -translate-x-1/2 rotate-${
               num % 2 === 0 ? "12" : "-12"

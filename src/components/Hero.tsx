@@ -81,15 +81,6 @@ const Hero = () => {
       },
       "a"
     );
-    tl.to(
-      ".hero-code-2",
-      {
-        y: -200,
-        opacity: 0,
-        ease: "power1.in",
-      },
-      "a"
-    );
   }, []);
 
   const handleDownloadResume = () => {
@@ -103,12 +94,11 @@ const Hero = () => {
 
   return (
     <div className="">
-
       <div className="relative -z-10 top-[30%]">
         <div className="absolute w-full h-[90vh] inset-0 bg-[url('/herobg.webp')] dark:opacity-40 opacity-0 bg-cover"></div>
         {/* <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black opacity-75"></div> */}
       </div>
-      <section className="h-[90vh] hero w-full relative flex items-center justify-center">
+      <section className="h-[90vh] container hero w-full relative flex items-center justify-center">
         {/* // Radial gradient for the container to give a faded look */}
         {/* <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-[#030014] bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div> */}
 
