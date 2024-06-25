@@ -110,7 +110,7 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
   return (
-    <div className="project-card min-h-[60vh] bg-[#030014] w-[80vw] md:w-[60vw] flex-shrink-0 mx-4 p-6 rounded-lg shadow-lg">
+    <div className="project-card min-h-[60vh] bg-[#030014] w-[80vw] md:w-[60vw] flex-shrink-0 mx-6 p-6 rounded-lg shadow-lg">
       <h3 className="text-2xl line-clamp-3 font-bold mb-4">{project.title}</h3>
       <div className="flex flex-col-reverse md:flex-row gap-6">
         <div className="md:w-1/2">
@@ -198,25 +198,24 @@ const Projects: React.FC = () => {
       scrollTrigger: {
         trigger: ".project-section",
         markers: true,
-        start: "top bottom",
+        start: "top 50%",
         end: "top 20%",
         scrub: 1,
       },
     });
     tl.to(".project-section", {
       backgroundColor: "#6F00FF",
-      color: "#fff"
+      color: "#fff",
     });
   }, []);
 
   return (
     <section
       ref={containerRef}
-      className="min-h-screen project-section overflow-hidden bg-gray-100 dark:bg-gray-900"
+      className="min-h-screen project-section overflow-hidden"
     >
       <h2 className="text-4xl font-bold text-center py-10">
-        Here are few of my favourite{" "}
-        <span className="underline">Projects</span>
+        Here are few of my favourite <span className="underline">Projects</span>
       </h2>
       <div ref={scrollRef} className="flex items-center h-[calc(100vh-8rem)]">
         {projects.map((project, index) => (
