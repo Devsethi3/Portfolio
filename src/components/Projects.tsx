@@ -2,17 +2,25 @@
 
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { FaArrowUpRightFromSquare, FaGithub } from "react-icons/fa6";
-import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
+
+interface Project {
+  title: string;
+  description: string;
+  image: string;
+  stack: string[];
+}
 
 const projects = [
   {
     title: "Synkron advanced collaboration with real-time features.",
-    description: `Synkron, a SaaS project, has honed my expertise in delivering advanced collaboration solutions. With real-time updates, customizable workspaces, and seamless file management, Synkron ensures an exceptional user experience. Leveraging modern technologies like Next.js 14, Drizzle ORM, Socket.io, TypeScript, Supabase, PostgreSQL, and Shadcn UI, this app embodies the highest standards of productivity and innovation.`,
+    description: `Synkron, a SaaS project, has honed my expertise in delivering advanced collaboration solutions. With real-time updates, customizable workspaces, and seamless file management.`,
     image: "/project-1.webp",
     stack: [
       "/nextjs.webp",
@@ -33,7 +41,7 @@ const projects = [
   {
     title:
       "Presenting a real-time messaging with chat and management features.",
-    description: `A Real-time messaging with advanced chat and management features. This Next.js-based application supports one-on-one messaging, group chat creation, and profile management. Leveraging Prisma, MongoDB, NextAuth, and Pusher, it delivers robust performance and real-time capabilities. When you use this chat app, you can be confident that your project meets the highest standards of performance and reliability.`,
+    description: `A Real-time messaging with advanced chat and management features. This Next.js-based application supports one-on-one messaging, group chat creation, and profile management.`,
     image: "/project-2.webp",
     stack: [
       "/nextjs.webp",
@@ -54,7 +62,7 @@ const projects = [
   {
     title:
       "Engaging content discovery with infinite scrolling, custom feeds, and seamless voting features.",
-    description: `Engaging content discovery with infinite scrolling, custom feeds, and seamless voting features. This application offers a user-friendly experience similar to Reddit, allowing users to explore and interact with content effortlessly. With features designed to enhance user engagement and interaction, the app ensures a dynamic and interactive experience. Built with a focus on performance and scalability, this upvote app guarantees your project meets the highest standards of engagement and functionality.`,
+    description: `Engaging content discovery with infinite scrolling, custom feeds, and seamless voting features. This application offers a user-friendly experience similar to Reddit.`,
     image: "/project-4.webp",
     stack: [
       "/nextjs.webp",
@@ -74,7 +82,7 @@ const projects = [
   },
   {
     title: "Effortless form creation and management with drag-and-drop",
-    description: `Effortless form creation and management with drag-and-drop functionality. This application simplifies the process of building and customizing forms, offering intuitive drag-and-drop features, theme toggling, and a personalized dashboard. Designed to enhance productivity and user experience, the app ensures your project meets the highest standards of efficiency and ease of use.`,
+    description: `Effortless form creation and management with drag-and-drop functionality. This application simplifies the process of building and customizing forms, offering intuitive drag-and-drop features.`,
     image: "/project-3.webp",
     stack: [
       "/nextjs.webp",
@@ -94,175 +102,114 @@ const projects = [
   },
 ];
 
-const Projects = () => {
-  const sectionRef = useRef(null);
-  const triggerRef = useRef(null);
+interface ProjectCardProps {
+  project: Project;
+  index: number;
+}
 
-  gsap.registerPlugin(ScrollTrigger);
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
+  return (
+    <div className="project-card min-h-[60vh] w-[80vw] md:w-[60vw] flex-shrink-0 mx-4 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+      <h3 className="text-2xl line-clamp-3 font-bold mb-4">{project.title}</h3>
+      <div className="flex flex-col-reverse md:flex-row gap-6">
+        <div className="md:w-1/2">
+          <p className="text-sm mb-4 line-clamp-2">{project.description}</p>
+          <div className="flex gap-4 mb-4">
+            <Button variant="default">
+              <Link href="/" className="flex items-center gap-2">
+                <FaGithub />
+                Github
+              </Link>
+            </Button>
+            <Button variant="secondary">
+              <Link href="/" className="flex items-center gap-2">
+                <FaArrowUpRightFromSquare />
+                Visit Site
+              </Link>
+            </Button>
+          </div>
+          <div className="hidden md:block">
+            <h4 className="text-lg font-semibold mb-2">Tech Stack</h4>
+            <div className="flex flex-wrap gap-2">
+              {project.stack.map((tech, i) => (
+                <Image
+                  key={i}
+                  src={tech}
+                  width={30}
+                  height={30}
+                  className="bg-white rounded-full p-1"
+                  alt={`tech-${i}`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="md:w-1/2">
+          <div className="relative w-full aspect-video">
+            <Image
+              src={project.image}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              alt={`project-${index + 1}`}
+              className="rounded-lg object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Projects: React.FC = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const mm = gsap.matchMedia();
+    if (!scrollRef.current || !containerRef.current) return;
 
-    mm.add("(min-width: 768px)", () => {
-      const pin = gsap.fromTo(
-        sectionRef.current,
-        {
-          translateX: 0,
-        },
-        {
-          translateX: "-300vw",
-          ease: "none",
-          duration: 1,
-          scrollTrigger: {
-            trigger: triggerRef.current,
-            start: "top top",
-            end: "2000 top",
-            scrub: 0.6,
-            pin: true,
-          },
-        }
-      );
-      return () => pin.kill();
-    });
+    const scrollElement = scrollRef.current;
+    const containerElement = containerRef.current;
 
-    mm.add("(max-width: 767px)", () => {
-      gsap.set(sectionRef.current, { translateX: 0 });
-      ScrollTrigger.getAll().forEach((t) => t.kill());
-    });
-
-    return () => mm.revert();
-  }, []);
-
-  useGSAP(() => {
-    let tl2 = gsap.timeline({
+    const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".project-section",
-        start: "top 70%",
-        end: "top 0%",
+        trigger: containerElement,
+        start: "top top",
+        end: () => `+=${scrollElement.scrollWidth - window.innerWidth}`,
+        scrub: true,
+        pin: true,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
       },
     });
-    tl2.from(
-      ".project-text",
-      {
-        y: 300,
-        opacity: 0,
-        stagger: 0.1,
-        duration: 1,
-      },
-      "a"
-    );
-    tl2.to(
-      ".project-stroke",
-      {
-        width: "80%",
-        ease: "power1.in",
-        delay: 0.8,
-      },
-      "a"
-    );
-    tl2.from(
-      ".project-showcase",
-      {
-        scale: 0,
-        opacity: 0,
-        duration: 1,
-        ease: "power1.in",
-      },
-      "a"
-    );
+
+    tl.to(scrollElement, {
+      x: () => -(scrollElement.scrollWidth - window.innerWidth),
+      ease: "none",
+    });
+
+    return () => {
+      tl.kill();
+    };
   }, []);
 
   return (
-    <section className="scroll-section-outer project-section">
-      <h2 className="text-4xl dark:text-white/90 text-black/90 font-bold container -mb-10 mt-5">
-        Here are a few of my favourite{" "}
-        <span className="text-emerald-500 underline">projects.</span>
+    <section
+      ref={containerRef}
+      className="min-h-screen overflow-hidden bg-gray-100 dark:bg-gray-900"
+    >
+      <h2 className="text-4xl font-bold text-center py-10">
+        Here are few of my favourite{" "}
+        <span className="text-emerald-500 underline">Projects</span>
       </h2>
-      <div
-        className="w-[30%]
-          blur-[120px]
-          rounded-full
-          h-32
-          absolute
-          bg-brand-primaryPurple/50
-          -z-10
-          top-22
-        "
-      />
-      <div ref={triggerRef} className="">
-        <div
-          ref={sectionRef}
-          className="scroll-section-inner flex"
-        >
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="scroll-section py-10 justify-center items-center container gap-6 lg:gap-16 flex"
-            >
-              <div className="md:w-[50%] w-full">
-                <div className="relative project-text">
-                  <span className="text-sm lg:text-base">Tech Expertise</span>
-                  <div className="absolute w-0 project-stroke h-[2px] bg-gradient-to-r from-fuchsia-500 to-cyan-500 transform -translate-x-1/2 -translate-y-1/2 top-[50%] left-[60%]"></div>
-                </div>
-                <div className="flex gap-5 lg:gap-10 flex-col mt-4">
-                  <h3 className="text-[1.4rem] leading-tight lg:text-[2.5rem] lg:leading-[2.25rem] font-extrabold project-text">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm lg:text-lg text-justify project-text">
-                    {project.description}
-                  </p>
-                  <div className="flex items-center gap-5 project-text">
-                    <Button variant="secondary">
-                      <Link
-                        href="/"
-                        className="flex items-center gap-5 text-lg"
-                      >
-                        <FaGithub />
-                        Github
-                      </Link>
-                    </Button>
-                    <Button variant="secondary">
-                      <Link
-                        href="/"
-                        className="flex items-center gap-5 text-lg"
-                      >
-                        <FaArrowUpRightFromSquare />
-                        Visit Site
-                      </Link>
-                    </Button>
-                  </div>
-                </div>
-              </div>
-              <div className="md:w-[50%] w-full p-4 flex flex-col gap-6 project-showcase border shadow-2xl shadow-indigo-600/50 rounded-lg min-h-[60vh]">
-                <div className="relative w-full h-[35vh]">
-                  <Image
-                    src={project.image}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    alt={`project-${index + 1}`}
-                    className="rounded-lg object-cover"
-                  />
-                </div>
-                <h4 className="text-xl font-semibold underline">Tech Stack</h4>
-                <div className="flex items-center gap-4 flex-wrap">
-                  {project.stack.map((tech, i) => (
-                    <Image
-                      key={i}
-                      src={tech}
-                      width={50}
-                      height={50}
-                      className="p-2 bg-white rounded-full object-cover"
-                      alt={`tech-${i}`}
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+      <div ref={scrollRef} className="flex items-center h-[calc(100vh-8rem)]">
+        {projects.map((project, index) => (
+          <ProjectCard key={index} project={project} index={index} />
+        ))}
       </div>
     </section>
   );
 };
 
 export default Projects;
+
+// Improve the animation and styles in this component for better user experience. It should be responsive for every screen sizes

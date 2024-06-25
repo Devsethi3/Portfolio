@@ -4,7 +4,7 @@ import ContactForm from "./ContactForm";
 const Contact = () => {
   return (
     <>
-      <div className="flex items-center container justify-center w-full h-screen">
+      <div className="flex items-center container justify-center w-full min-h-screen mt-12 lg:mt-0">
         <div className="">
           <div
             className="w-[30%]
