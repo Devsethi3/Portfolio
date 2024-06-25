@@ -8,13 +8,11 @@ import Projects from "@/components/Projects";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import TextEffect from "@/components/TextEffect";
-import Navbar from "@/components/Navbar";
 import MobileTextEffect from "@/components/MobileTextEffect";
 
 const HomePage = () => {
   return (
     <>
-      {/* <Navbar /> */}
       <Hero />
       <div className="hidden md:block">
         <TextEffect />
