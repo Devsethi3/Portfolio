@@ -46,7 +46,7 @@ const Navbar = () => {
               />
             </div>
             <Link
-              className="nav-link"
+              className="nav-link pt-[4rem] md:pt-0"
               href="/"
               onClick={() => setIsOpen(false)}
             >
