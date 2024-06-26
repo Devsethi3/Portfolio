@@ -5,6 +5,7 @@ import { FaLocationArrow } from "react-icons/fa6";
 import { ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -116,11 +117,13 @@ const About = () => {
           ))}
         </div>
         <div className="magic-button mt-10">
-          <MagicButton
-            title="Let's Talk"
-            icon={<FaLocationArrow />}
-            position="right"
-          />
+          <Link href="/contact">
+            <MagicButton
+              title="Let's Talk"
+              icon={<FaLocationArrow />}
+              position="right"
+            />
+          </Link>
         </div>
       </div>
     </div>

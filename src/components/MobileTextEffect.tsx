@@ -109,9 +109,9 @@ const TextEffect: React.FC = () => {
       <div className="relative z-10">
         <h2
           ref={textRef}
-          className="text-[2.2rem] sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-white mix-blend-difference"
+          className="text-[2.2rem] sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight dakr:text-white text-black mix-blend-difference"
         >
-          Elevate your online presence with cutting edge solutions.
+          Elevate your online presence with cutting edge solution.
         </h2>
       </div>
       <div className="absolute inset-0 flex justify-center items-center flex-wrap -z-10">

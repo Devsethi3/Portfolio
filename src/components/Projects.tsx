@@ -197,7 +197,7 @@ const Projects: React.FC = () => {
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".project-section",
-        markers: true,
+        // markers: true,
         start: "top 50%",
         end: "top 20%",
         scrub: 1,
