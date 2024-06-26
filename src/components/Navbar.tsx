@@ -1,13 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import ThemeSwitcher from "./ThemeSwitcher";
 import { HiMenu } from "react-icons/hi";
 import { FaGithub } from "react-icons/fa6";
 import { MdOutlineClose } from "react-icons/md";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,11 +28,11 @@ const Navbar = () => {
     <div>
       <div className="border-b dark:bg-[#030014] bg-white sticky top-0 z-40">
         <div className="container flex items-center h-[10vh] justify-between">
-          <Link href="/" className="relative flex items-center gap-10">
+          <a href="/" className="relative flex items-center gap-10">
             <Image src="/logo.svg" alt="logo" width={40} height={40} />
             <div className="absolute h-full w-[2px] left-[25%] bg-black dark:bg-white/40 hidden md:block"></div>
             <p className="text-xl hidden md:block">Dev Prasad Sethi</p>
-          </Link>
+          </a>
           <div
             className={`nav-menu flex flex-col lg:flex-row items-center gap-16 ${
               isOpen ? "show-menu" : "nav-menu"
@@ -45,27 +45,27 @@ const Navbar = () => {
                 className="bg-white nav-close font-extrabold text-gray-700 p-2 rounded-lg"
               />
             </div>
-            <Link
+            <a
               className="nav-link pt-[4rem] md:pt-0"
               href="/"
               onClick={() => setIsOpen(false)}
             >
               Home
-            </Link>
-            <Link
+            </a>
+            <a
               className="nav-link"
               href="/projects"
               onClick={() => setIsOpen(false)}
             >
               Explore Projects
-            </Link>
-            <Link
+            </a>
+            <a
               className="nav-link"
               href="/about"
               onClick={() => setIsOpen(false)}
             >
               About
-            </Link>
+            </a>
           </div>
           <div className="flex items-center gap-4 md:gap-8 lg:gap-16">
             <ThemeSwitcher />
