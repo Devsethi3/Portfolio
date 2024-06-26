@@ -196,7 +196,7 @@ const Hero = () => {
             applications that bring your vision to life.
           </h4>
           <div className="flex items-center gap-5 lg:gap-8">
-            <Link href="/contact">
+            <Link href="/contact" passHref legacyBehavior>
               <MagicButton
                 title="Let's Talk"
                 icon={<FaLocationArrow />}

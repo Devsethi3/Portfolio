@@ -117,7 +117,7 @@ const About = () => {
           ))}
         </div>
         <div className="magic-button mt-10">
-          <Link href="/contact">
+          <Link href="/contact" passHref legacyBehavior>
             <MagicButton
               title="Let's Talk"
               icon={<FaLocationArrow />}
