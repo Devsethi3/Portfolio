@@ -40,6 +40,26 @@ const projects = [
     ],
   },
   {
+    title: "Synkron advanced collaboration with real-time features.",
+    description: `Synkron, a SaaS project, has honed my expertise in delivering advanced collaboration solutions. With real-time updates, customizable workspaces, and seamless file management.`,
+    image: "/project-1.webp",
+    stack: [
+      "/nextjs.webp",
+      "/supabase.png",
+      "/drizzle.svg",
+      "/tailwind.svg",
+      "/postgresql.svg",
+      "/shadcn.webp",
+      "/react.webp",
+      "/typescript.svg",
+      "/figma.svg",
+      "/vercel.png",
+      "/html-5.webp",
+      "/css-3.webp",
+      "/github.svg",
+    ],
+  },
+  {
     title:
       "Presenting a real-time messaging with chat and management features.",
     description: `A Real-time messaging with advanced chat and management features. This Next.js-based application supports one-on-one messaging, group chat creation, and profile management.`,
@@ -114,7 +134,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
       <h3 className="text-2xl line-clamp-3 font-bold mb-4">{project.title}</h3>
       <div className="flex flex-col-reverse md:flex-row gap-6">
         <div className="md:w-1/2">
-          <p className="text-sm mb-4 line-clamp-2">{project.description}</p>
+          <p className="text-sm mb-4 line-clamp-4">{project.description}</p>
           <div className="flex gap-4 mb-4">
             <Button variant="default">
               <Link href="/" className="flex items-center gap-2">

@@ -111,7 +111,7 @@ const TextEffect: React.FC = () => {
           ref={textRef}
           className="text-[2.2rem] sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight dakr:text-white text-black mix-blend-difference"
         >
-          Elevate your online presence with cutting edge solution.
+          Elevate your online presence with cutting edge solutions.
         </h2>
       </div>
       <div className="absolute inset-0 flex justify-center items-center flex-wrap -z-10">
