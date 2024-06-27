@@ -9,6 +9,7 @@ import About from "@/components/About";
 import Contact from "@/components/Contact";
 import TextEffect from "@/components/TextEffect";
 import MobileTextEffect from "@/components/MobileTextEffect";
+import Footer from "@/components/Footer";
 
 const HomePage = () => {
   return (
@@ -23,8 +24,9 @@ const HomePage = () => {
       <About />
       <Grid />
       {/* <Model /> */}
-      <Projects />
+      {/* <Projects /> */}
       <Contact />
+      <Footer />
     </>
   );
 };
