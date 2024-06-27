@@ -130,8 +130,15 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
   return (
-    <div className="project-card min-h-[60vh] bg-[#030014] w-[80vw] md:w-[60vw] flex-shrink-0 mx-6 p-6 rounded-lg shadow-lg">
-      <h3 className="text-2xl lg:text-4xl line-clamp-3 font-bold mb-4">{project.title}</h3>
+    // Add the margin right mr-6 to the last child
+    <div
+      className={`project-card min-h-[60vh] bg-[#030014] w-[80vw] md:w-[60vw] flex-shrink-0 mx-6 p-6 rounded-lg shadow-lg ${
+        index === projects.length - 1 ? "mr-6" : ""
+      }`}
+    >
+      <h3 className="text-2xl lg:text-4xl line-clamp-3 font-bold mb-4">
+        {project.title}
+      </h3>
       <div className="flex flex-col-reverse md:flex-row gap-6">
         <div className="md:w-1/2">
           <p className="text-sm mb-4 line-clamp-4">{project.description}</p>
