@@ -170,7 +170,11 @@ const Hero = () => {
               </span>{" "}
             </h1>
             <h1 className="home-text home-text2 dark:text-white/90">
-              A Next.js developer based in India
+              A{" "}
+              <span className="px-2 rounded-lg text-emerald-500 underline -z-10">
+                Web Developer
+              </span>{" "}
+              based in India
             </h1>
           </div>
           <div className="absolute hero-object opacity-30 lg:opacity-100 bottom-[25%] left-[10%]">
