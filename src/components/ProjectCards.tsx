@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
 import { Button } from "./ui/button";
-import { FaArrowRight, FaGithub } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa6";
 import { MdArrowOutward } from "react-icons/md";
 
 interface ProjectCardProps {
@@ -95,9 +95,11 @@ interface ProjectCardsProps {
   projects: ProjectCardProps[];
 }
 
+
 const ProjectCards: React.FC<ProjectCardsProps> = ({ projects }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const projectsPerPage = 6;
+  const projectsContainerRef = useRef<HTMLDivElement>(null);
 
   const indexOfLastProject = currentPage * projectsPerPage;
   const indexOfFirstProject = indexOfLastProject - projectsPerPage;
@@ -112,8 +114,17 @@ const ProjectCards: React.FC<ProjectCardsProps> = ({ projects }) => {
     setCurrentPage(pageNumber);
   };
 
+  useEffect(() => {
+    if (projectsContainerRef.current) {
+      window.scrollTo({
+        top: projectsContainerRef.current.offsetTop - 100, // Adjust this value as needed
+        behavior: 'smooth'
+      });
+    }
+  }, [currentPage]);
+
   return (
-    <div>
+    <div ref={projectsContainerRef}>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {currentProjects.map((project, index) => (
           <ProjectCard key={index} {...project} />

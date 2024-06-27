@@ -247,5 +247,3 @@ const Projects: React.FC = () => {
 };
 
 export default Projects;
-
-// Improve the animation and styles in this component for better user experience. It should be responsive for every screen sizes
