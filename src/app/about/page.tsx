@@ -1,6 +1,9 @@
 "use client";
 
 import React from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
 import { FaCode, FaRegLightbulb } from "react-icons/fa6";
 import { BsPuzzleFill } from "react-icons/bs";
 import { FiType } from "react-icons/fi";
@@ -9,12 +12,28 @@ import Image from "next/image";
 import TechStack from "@/components/TechStack";
 import TextSlider from "@/components/TextSlider";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const AboutPage = () => {
+  const Hero = () => {
+    useGSAP(() => {
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".about",
+          markers: true,
+          start: "top 10%",
+          end: "top 0%",
+          // scrub: 3,
+        },
+      });
+    }, []);
+  };
+
   const words = ["Perfectionist", "Alchemist", "Whisperer"];
 
   return (
-    <div>
-      <div>
+    <>
+      <div className="about">
         <section className="w-full pt-14 md:py-24 lg:pt-32 relative">
           <div
             className="w-[30%]
@@ -153,7 +172,7 @@ const AboutPage = () => {
       </section>
 
       <TechStack />
-    </div>
+    </>
   );
 };
 
