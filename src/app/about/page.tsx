@@ -34,18 +34,17 @@ const AboutPage = () => {
     let statsTl = gsap.timeline({
       scrollTrigger: {
         trigger: statsRef.current,
-        start: "top 50%",
+        start: "top 60%",
         markers: true,
         end: "bottom 20%",
-        scrub: .5,
       },
     });
 
     statsTl.from(".stat-item", {
-      x: -50,
+      x: -100,
       opacity: 0,
-      duration: 0.5,
-      stagger: 0.1,
+      duration: 0.8,
+      stagger: 0.3,
     });
 
     // Skills animation
@@ -54,7 +53,6 @@ const AboutPage = () => {
         trigger: skillsRef.current,
         start: "top 80%",
         end: "bottom 20%",
-        scrub: 1,
       },
     });
 
