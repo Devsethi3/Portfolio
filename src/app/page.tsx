@@ -24,7 +24,7 @@ const HomePage = () => {
       <About />
       <Grid />
       {/* <Model /> */}
-      {/* <Projects /> */}
+      <Projects />
       <Contact />
       <Footer />
     </>

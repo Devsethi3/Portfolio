@@ -47,7 +47,6 @@ const AboutPage = () => {
       stagger: 0.3,
     });
 
-    // Skills animation
     let skillsTl = gsap.timeline({
       scrollTrigger: {
         trigger: skillsRef.current,
