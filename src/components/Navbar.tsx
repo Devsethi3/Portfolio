@@ -97,9 +97,9 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center gap-4">
-            <Link href="/contact">
+            <a href="/contact">
               <Button variant="secondary">Say Hello 👋</Button>
-            </Link>
+            </a>
 
             <div className="block md:hidden">
               <Button

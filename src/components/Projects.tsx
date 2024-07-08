@@ -140,7 +140,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
       </h3>
       <div className="flex flex-col-reverse md:flex-row gap-6">
         <div className="md:w-1/2">
-          <p className="text-sm mb-4 line-clamp-4">{project.description}</p>
+          <p className="text-sm lg:text-base mb-4 line-clamp-4">{project.description}</p>
           <div className="flex gap-4 mb-4">
             <Button variant="default">
               <Link href="/" className="flex items-center gap-2">
@@ -171,7 +171,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
             </div>
           </div>
         </div>
-        <div className="md:w-1/2">
+        <div className="md:w-1/2 mt-5">
           <div className="relative w-full aspect-video">
             <Image
               src={project.image}
