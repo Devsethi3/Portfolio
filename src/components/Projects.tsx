@@ -39,8 +39,8 @@ const projects = [
       "GitHub",
     ],
     links: {
-      github: "https://github.com/your-repo/upvot",
-      site: "https://upvot.example.com",
+      github: "https://github.com/Devsethi3/Synkron",
+      site: "https://synkron.vercel.app",
     },
   },
   {
@@ -50,15 +50,16 @@ const projects = [
     stack: [
       "Next.js",
       "Neon DB",
-      "Drizzle",
+      "Drizzle ORM",
       "Tailwind",
+      "GSAP",
       "PostgreSQL",
       "Shadcn UI",
       "Gemini API",
     ],
     links: {
-      github: "https://github.com/your-repo/upvot",
-      site: "https://upvot.example.com",
+      github: "https://github.com/Devsethi3/Artigen",
+      site: "https://artigen-nine.vercel.app",
     },
   },
   {
@@ -74,11 +75,12 @@ const projects = [
       "Vercel",
       "GitHub",
       "Zod",
+      'dnd Kit',
       "React Hook Form",
     ],
     links: {
-      github: "https://github.com/your-repo/upvot",
-      site: "https://upvot.example.com",
+      github: "https://github.com/Devsethi3/Quick-Form-Builder",
+      site: "https://quick-form-one.vercel.app/",
     },
   },
   {
@@ -97,18 +99,28 @@ const projects = [
       "Editor JS",
     ],
     links: {
-      github: "https://github.com/your-repo/upvot",
-      site: "https://upvot.example.com",
+      github: "https://github.com/Devsethi3/Upvote-Community-Driven-Discussion",
+      site: "https://upvote.vercel.app",
     },
   },
   {
     title: "NexChat : A Realtime chatting Web Application",
     description: `Effortless form creation and management with drag-and-drop functionality. This application simplifies the process of building and customizing forms, offering intuitive drag-and-drop features.`,
     image: "/project-3.webp",
-    stack: ["Next.js", "Pusher JS", "Prisma", "Axios", "Cloudinary", "Zustand", "Shadcn UI", "Node JS", "react-hook-form"],
+    stack: [
+      "Next.js",
+      "Pusher JS",
+      "Prisma",
+      "Axios",
+      "Cloudinary",
+      "Zustand",
+      "Shadcn UI",
+      "Node JS",
+      "react-hook-form",
+    ],
     links: {
-      github: "https://github.com/your-repo/upvot",
-      site: "https://upvot.example.com",
+      github: "https://github.com/Devsethi3/NexChat-Messaging-App",
+      site: "https://nexchat-one.vercel.app",
     },
   },
 ];
