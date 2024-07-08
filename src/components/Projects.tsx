@@ -25,7 +25,7 @@ interface Project {
 const projects = [
   {
     title: "Synkron: A SaaS platform for collaborative workspaces",
-    description: `Synkron, a SaaS project, has honed my expertise in delivering advanced collaboration solutions. With real-time updates, customizable workspaces, and seamless file management.`,
+    description: `Synkron, a SaaS project, has honed expertise in delivering advanced collaboration solutions. Real-time updates, customizable workspaces, and file management.`,
     image: "/project-1.webp",
     stack: [
       "Next.js",
@@ -45,7 +45,7 @@ const projects = [
   },
   {
     title: "ArtiGen: An AI powered SaaS Application",
-    description: `Synkron, a SaaS project, has honed my expertise in delivering advanced collaboration solutions. With real-time updates, customizable workspaces, and seamless file management.`,
+    description: `Developed an innovative AI-powered SaaS application using Next.js, TypeScript, and Gemini AI, resulting tools for content creation tasks.`,
     image: "/project-1.webp",
     stack: [
       "Next.js",
@@ -64,7 +64,7 @@ const projects = [
   },
   {
     title: "QuickForm : A Drag & Drop Form Builder",
-    description: `A Real-time messaging with advanced chat and management features. This Next.js-based application supports one-on-one messaging, group chat creation, and profile management.`,
+    description: `Effortless form creation and management with drag-and-drop functionality. This application simplifies the process of building and customizing forms, offering intuitive drag-and-drop features.`,
     image: "/project-2.webp",
     stack: [
       "Next.js",
@@ -75,7 +75,7 @@ const projects = [
       "Vercel",
       "GitHub",
       "Zod",
-      'dnd Kit',
+      "dnd Kit",
       "React Hook Form",
     ],
     links: {
@@ -105,7 +105,8 @@ const projects = [
   },
   {
     title: "NexChat : A Realtime chatting Web Application",
-    description: `Effortless form creation and management with drag-and-drop functionality. This application simplifies the process of building and customizing forms, offering intuitive drag-and-drop features.`,
+    description: `A Real-time messaging with advanced chat and management features. This Next.js-based application supports one-on-one messaging, group chat creation, and profile management.`,
+
     image: "/project-3.webp",
     stack: [
       "Next.js",
@@ -173,7 +174,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
               {project.stack.map((tech, i) => (
                 <span
                   key={i}
-                  className="bg-secondary px-2 text-black py-1 rounded-md text-sm"
+                  className="bg-secondary px-2 text-black dark:text-white/80 py-1 rounded-md text-sm"
                 >
                   {tech}
                 </span>

@@ -35,7 +35,7 @@ const AboutPage = () => {
       scrollTrigger: {
         trigger: statsRef.current,
         start: "top 60%",
-        markers: true,
+        // markers: true,
         end: "bottom 20%",
       },
     });
