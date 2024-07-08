@@ -20,7 +20,7 @@ interface Project {
 
 const projects = [
   {
-    title: "Synkron advanced collaboration with real-time features.",
+    title: "Synkron: A SaaS platform for collaborative and private workspaces",
     description: `Synkron, a SaaS project, has honed my expertise in delivering advanced collaboration solutions. With real-time updates, customizable workspaces, and seamless file management.`,
     image: "/project-1.webp",
     stack: [
@@ -40,7 +40,7 @@ const projects = [
     ],
   },
   {
-    title: "Synkron advanced collaboration with real-time features.",
+    title: "ArtiGen: An AI powered SaaS Application",
     description: `Synkron, a SaaS project, has honed my expertise in delivering advanced collaboration solutions. With real-time updates, customizable workspaces, and seamless file management.`,
     image: "/project-1.webp",
     stack: [
@@ -61,7 +61,7 @@ const projects = [
   },
   {
     title:
-      "Presenting a real-time messaging with chat and management features.",
+      "QuickForm : A Drag & Drop Form Builder",
     description: `A Real-time messaging with advanced chat and management features. This Next.js-based application supports one-on-one messaging, group chat creation, and profile management.`,
     image: "/project-2.webp",
     stack: [
@@ -82,7 +82,7 @@ const projects = [
   },
   {
     title:
-      "Engaging content discovery with infinite scrolling, custom feeds, and seamless voting features.",
+      "UpVote : Content discovery with infinite scrolling, custom feeds, and seamless voting features.",
     description: `Engaging content discovery with infinite scrolling, custom feeds, and seamless voting features. This application offers a user-friendly experience similar to Reddit.`,
     image: "/project-4.webp",
     stack: [
@@ -102,7 +102,7 @@ const projects = [
     ],
   },
   {
-    title: "Effortless form creation and management with drag-and-drop",
+    title: "NexChat : A Realtime chatting Web Application",
     description: `Effortless form creation and management with drag-and-drop functionality. This application simplifies the process of building and customizing forms, offering intuitive drag-and-drop features.`,
     image: "/project-3.webp",
     stack: [
@@ -130,13 +130,12 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
   return (
-    // Add the margin right mr-6 to the last child
     <div
       className={`project-card min-h-[60vh] bg-[#030014] w-[80vw] md:w-[60vw] flex-shrink-0 mx-6 p-6 rounded-lg shadow-lg ${
         index === projects.length - 1 ? "mr-6" : ""
       }`}
     >
-      <h3 className="text-2xl lg:text-4xl line-clamp-3 font-bold mb-4">
+      <h3 className="text-xl lg:text-4xl line-clamp-3 font-bold mb-4">
         {project.title}
       </h3>
       <div className="flex flex-col-reverse md:flex-row gap-6">
