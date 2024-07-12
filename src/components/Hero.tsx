@@ -85,13 +85,8 @@ const Hero = () => {
     );
   }, []);
 
-  const handleDownloadResume = () => {
-    const link = document.createElement("a");
-    link.href = "/resume.docx";
-    link.download = "Dev_Prasad_Sethi_Resume.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const handleViewResume = () => {
+    window.open("/Resume.pdf", "_blank");
   };
 
   return (
@@ -206,7 +201,7 @@ const Hero = () => {
                 position="right"
               />
             </Link>
-            <Button size="lg" onClick={handleDownloadResume}>
+            <Button size="lg" onClick={handleViewResume}>
               Resume
               <MdOutlineFileDownload className="ml-2" />
             </Button>
