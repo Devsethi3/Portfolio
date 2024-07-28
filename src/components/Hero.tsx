@@ -96,7 +96,7 @@ const Hero = () => {
         {/* <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black opacity-75"></div> */}
       </div>
       <section className="h-[90vh] container hero w-full relative flex items-center justify-center">
-        {/* // Radial gradient for the container  */}
+        {/* // Radial gradient for the */}
         {/* <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-[#030014] bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div> */}
 
         <div className="flex mt-[-3rem] items-center flex-col gap-8">
