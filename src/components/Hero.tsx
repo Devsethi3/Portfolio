@@ -58,7 +58,6 @@ const Hero = () => {
   //   gsap.to(".highlight", {
   //     width: 565,
   //     delay: 1,
-  //     duration: 1,
 
 
 
