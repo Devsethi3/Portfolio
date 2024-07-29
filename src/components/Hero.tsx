@@ -54,10 +54,6 @@ const Hero = () => {
     });
   }, []);
 
-  // useGSAP(() => {
-  //   gsap.to(".highlight", {
-
-
 
   useGSAP(() => {
     let tl = gsap.timeline({
