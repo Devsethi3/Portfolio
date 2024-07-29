@@ -61,7 +61,7 @@ const Hero = () => {
   //     duration: 1,
   //     ease: "power2.inOut",
   //   });
-  // }, []);
+
 
   useGSAP(() => {
     let tl = gsap.timeline({
