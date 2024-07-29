@@ -59,8 +59,7 @@ const Hero = () => {
   //     width: 565,
   //     delay: 1,
   //     duration: 1,
-  //     ease: "power2.inOut",
-  //   });
+
 
 
   useGSAP(() => {
