@@ -56,7 +56,6 @@ const Hero = () => {
 
   // useGSAP(() => {
   //   gsap.to(".highlight", {
-  //     width: 565,
 
 
 
