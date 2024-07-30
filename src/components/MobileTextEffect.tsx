@@ -67,7 +67,6 @@ const TextEffect: React.FC = () => {
       });
     });
 
-    //
     const images = container.querySelectorAll(".sample-image");
     images.forEach((img, index) => {
       gsap.fromTo(
